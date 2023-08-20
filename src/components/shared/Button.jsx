@@ -1,14 +1,9 @@
 import styled from 'styled-components';
 import { colors } from './colors';
 
-const TYPE_TO_COLOR = {
-    primary: colors.orange,
-    secondary: colors.orange
-};
-
 const ButtonStyled = styled.button`
   outline: none;
-  background: ${({$type}) => TYPE_TO_COLOR[$type]};
+  background: ${colors.orange};
   border: 2px solid white;
   border-radius: 8px;
   font-size: 24px;
@@ -36,5 +31,5 @@ const MovedButtonStyled = styled(ButtonStyled)`
   }
 `;
 
-export const Button = ({type = 'primary', ...restProps}) => <ButtonStyled $type={type} {...restProps} />;
-export const MovedButton = ({type = 'primary', ...restProps}) => <MovedButtonStyled $type={type} {...restProps} />;
+export const Button = (props) => <ButtonStyled {...props} />;
+export const MovedButton = (props) => <MovedButtonStyled {...props} />;

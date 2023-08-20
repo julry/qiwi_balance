@@ -6,12 +6,29 @@ import { FlexWrapper } from './components/shared/FlexWrapper';
 
 const Wrapper = styled(FlexWrapper)`
   --borderRadius: 20px;
+  --cardSize: min(80px, 20vw);
+  --cardBorder: 14px;
   height: ${({height}) => height}px;
   overflow-x: hidden;
   align-items: center;
   background: #1C1C1C;
   color: white;
   white-space: pre-line;
+
+  @media screen and (max-height: 800px){
+    --cardBorder: 10px;
+    --cardSize: min(70px, 15vw);
+  }
+
+  @media screen and (max-height: 700px){
+    --cardBorder: 10px;
+    --cardSize: min(60px, 15vw);
+  }
+
+  @media screen and (max-height: 600px){
+    --cardBorder: 10px;
+    --cardSize: min(55px, 16vw);
+  }
 `;
 
 const ComponentWrapper = styled(FlexWrapper)`

@@ -28,7 +28,7 @@ export const Modal = ({icon, text, onNext, btnText, children, ...restProps}) => 
         <Rectangle>
             <Icon $icon={icon}/>
             <CommonText>{text}</CommonText>
-            <MovedButton type={'primary'} onClick={onNext}>{btnText}</MovedButton>
+            <MovedButton onClick={onNext}>{btnText}</MovedButton>
         </Rectangle>
         {children}
     </ModalWrapper>

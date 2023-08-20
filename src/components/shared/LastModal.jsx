@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { useIMask } from 'react-imask';
-import { CommonText } from './styledTexts';
+import { BoldText, CommonText, RegularText } from './styledTexts';
 import { Modal } from './Modal';
 import { colors } from './colors';
-import tgIcon from '../../assets/images/winkFace.svg';
+import icon from '../../assets/images/winkFace.svg';
+import iconSend from '../../assets/images/heartFace.svg';
+import { Button } from './Button';
+import { FlexWrapper } from './FlexWrapper';
 
 const ModalWrapper = styled(Modal)`
   display: flex;
@@ -13,7 +16,7 @@ const ModalWrapper = styled(Modal)`
   justify-content: center;
 `;
 
-const Form = styled.div`
+const Form = styled(FlexWrapper)`
   margin-top: min(35px, 9.3vw);
   max-width: min(88.7vw, 350px);
 `;
@@ -39,13 +42,13 @@ const Input = styled.input`
   &::placeholder {
     color: #C9C9C9;
   }
-  
+
   @media screen and (min-height: 750px) {
     font-size: 23px;
   }
 `;
 
-const InputLabel = styled.p`
+const InputLabel = styled(RegularText)`
   position: absolute;
   top: 8px;
   lefT: 10px;
@@ -78,10 +81,11 @@ const RadioButtonLabel = styled.label`
   align-items: center;
   cursor: pointer;
   font-size: 9px;
+  font-weight: 300;
   width: 100%;
   margin: min(20px, 4.5vw) auto;
   text-align: left;
-  
+
   & ${InputRadioButton}:checked + ${RadioIconStyled}:after {
     content: '';
     position: absolute;
@@ -106,21 +110,52 @@ const Link = styled.a`
   color: inherit;
 `;
 
+const ButtonStyled = styled(Button)`
+  margin: 0 auto;
+  transition: opacity 0.35s;
+  
+  &:disabled {
+    opacity: 0.6;
+  }
+`;
+
+const SendBlock = styled(FlexWrapper)`
+  margin-top: min(69px, 16.5vw);
+  align-items: center;
+  justify-content: center;
+`;
+
+const Icon = styled.div`
+  width: var(--cardSize);
+  height: var(--cardSize);
+  background: url(${iconSend}) no-repeat 0 0 /cover;
+`;
+
+const SendText = styled(BoldText)`
+  font-size: 40px;
+  margin-top: min(20px, 5.1vw);
+
+  @media screen and (max-height: 750px) {
+    font-size: 35px;
+  }
+`;
+
 export const LastModal = ({onNext}) => {
     const [phone, setPhone] = useState('');
     const [isSending, setIsSending] = useState(false);
     const [isSend, setIsSend] = useState(false);
     const [isAgreed, setIsAgreed] = useState(false);
     const [opts] = useState({mask: '+{7} 000 000-00-00'});
-    const {ref, setValue, value} = useIMask(opts, {
+    const {ref, setValue} = useIMask(opts, {
         onAccept: (value) => setPhone(value),
     });
 
     const sendData = () => {
+        setIsSend(true);
         setIsSending(true);
 
-        const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdaVr-4R_moI4F13aqbKAeAEVu7Sp0_Orh0ai414es9l3R8xA/formResponse';
-        const PHONE_ID = 'entry.1077786449';
+        const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSetmicOtWgyjejzblWOgfiE79jQ90ffA67rM8FuyzoEkCgqxA/formResponse';
+        const PHONE_ID = 'entry.1975772535';
         const formData = new FormData();
 
         formData.append(PHONE_ID, phone);
@@ -134,7 +169,7 @@ export const LastModal = ({onNext}) => {
         const myRequest = new Request(GOOGLE_FORM_ACTION_URL, myInit);
 
         fetch(myRequest).then(() => {
-            onNext();
+            setIsSend(true);
         }).finally(() => {
             setIsSending(false);
         });
@@ -150,38 +185,51 @@ export const LastModal = ({onNext}) => {
                 '\nищи его в закрепе. Построй карьеру \nв динамичном финтехе!'
             }
             btnText={'Заглянуть к QIWI'}
-            icon={tgIcon}
+            icon={icon}
             onClick={onNext}
         >
-            <Form>
-                <CommonText>
-                    Частичка крутого IT-сообщества всегда может быть с тобой — участвуй в розыгрыше приза!
-                </CommonText>
-                <InputWrapper>
-                    <InputLabel>Номер телефона</InputLabel>
-                    <Input
-                        ref={ref}
-                        type="tel"
-                        placeholder="+7 XXX XXX-XX-XX"
-                        name="XmnwAc"
-                        value={phone}
-                        onChange={e => setValue(e.target.value)}
-                    />
-                </InputWrapper>
-                <RadioButtonLabel>
-                    <InputRadioButton
-                        type="checkbox"
-                        value={isAgreed}
-                        checked={isAgreed}
-                        onChange={() => setIsAgreed(prevAgreed => !prevAgreed)}
-                    />
-                    <RadioIconStyled/>
-                    <span>
-                        Я согласен(а) на <Link href={'https://fut.ru/personal_data_policy/'} target="_blank">
-                        обработку персональных данных</Link> и получение {'\n'}информационных сообщений
-                    </span>
-                </RadioButtonLabel>
-            </Form>
+            {isSend ? (
+                <SendBlock>
+                    <Icon/>
+                    <SendText>ОТПРАВЛЕНО</SendText>
+                </SendBlock>
+            ) : (
+                <Form>
+                    <CommonText>
+                        Частичка крутого IT-сообщества всегда может быть с тобой — участвуй в розыгрыше приза!
+                    </CommonText>
+                    <InputWrapper>
+                        <InputLabel>Номер телефона</InputLabel>
+                        <Input
+                            ref={ref}
+                            type="tel"
+                            placeholder="+7 XXX XXX-XX-XX"
+                            name="XmnwAc"
+                            value={phone}
+                            onChange={e => setValue(e.target.value)}
+                        />
+                    </InputWrapper>
+                    <RadioButtonLabel>
+                        <InputRadioButton
+                            type="checkbox"
+                            value={isAgreed}
+                            checked={isAgreed}
+                            onChange={() => setIsAgreed(prevAgreed => !prevAgreed)}
+                        />
+                        <RadioIconStyled/>
+                        <span>
+                            Я согласен(а) на <Link href={'https://fut.ru/personal_data_policy/'} target="_blank">
+                            обработку персональных данных</Link> и получение {'\n'}информационных сообщений
+                        </span>
+                    </RadioButtonLabel>
+                    <ButtonStyled
+                        onClick={sendData}
+                        disabled={isSending || phone.length < 16 || !isAgreed}
+                    >
+                        Участвовать
+                    </ButtonStyled>
+                </Form>
+            )}
         </ModalWrapper>
     );
 };

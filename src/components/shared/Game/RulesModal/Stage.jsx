@@ -17,6 +17,10 @@ const Wrapper = styled.div`
   @media screen and (max-height: 700px) {
     padding: min(15px, 4vw) min(15px, 4vw) min(20px, 5.3vw);
   }
+
+  @media screen and (min-width: 700px) {
+    width: 550px;
+  }
 `;
 
 const ButtonRight = styled(MovedButton)`
@@ -38,12 +42,12 @@ export const Stage = ({ text, isLeft, onPrev, onNext, isLast, style, top}) => (
         <CommonText>
             {text}
         </CommonText>
-        {isLeft && <ButtonLeft type={'primary'} onClick={onPrev}>
+        {isLeft && <ButtonLeft onClick={onPrev}>
             <svg width="20" height="17" viewBox="0 0 20 17" fill="none" >
                 <path d="M0.0399995 8.56L7.84 16.36V12.28L5.56 10H19.96V7.12H5.56L7.84 4.84V0.759999L0.0399995 8.56Z" fill="white"/>
             </svg>
         </ButtonLeft>}
-        <ButtonRight type={'primary'} onClick={onNext} $isLast={isLast}>
+        <ButtonRight onClick={onNext} $isLast={isLast}>
             {isLast ? 'Вперед' : (
                 <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19.96 8.56L12.16 16.36V12.28L14.44 10H0.04V7.12H14.44L12.16 4.84V0.759999L19.96 8.56Z" fill="white"/>

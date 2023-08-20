@@ -2,19 +2,20 @@ import styled from 'styled-components';
 import { useProgress } from '../../hooks/useProgress';
 import { colors } from '../shared/colors';
 import ball from '../../assets/images/ball.svg';
-import cup from '../../assets/images/cup.svg';
-import book from '../../assets/images/book.svg';
-import dialogs from '../../assets/images/dialogs.svg';
-import question from '../../assets/images/question.svg';
+import star from '../../assets/images/star.svg';
+import fire from '../../assets/images/fire.svg';
+import heart from '../../assets/images/heart.svg';
+import light from '../../assets/images/light.svg';
+import sticker from '../../assets/images/sticker.svg';
 import { BoldText, CommonText } from '../shared/styledTexts';
 import { FlexWrapper } from '../shared/FlexWrapper';
-import { MovedButton } from '../shared/Button';
+import { Button, MovedButton } from '../shared/Button';
 
 const Wrapper = styled(FlexWrapper)`
   position: relative;
   width: 100%;
   height: 100%;
-  background: ${colors.purple};
+  background: ${colors.orange};
 `;
 
 const Icon = styled.div`
@@ -24,50 +25,52 @@ const Icon = styled.div`
 
 const Ball = styled(Icon)`
   background-image: url(${ball});
-  top: 0;
-  left: min(27px, 6.9vw);
-  height: min(63px, 16.2vw);
-  width: min(94px, 24.1vw)
+  top: min(45px, 5.3%);
+  left: min(54px, 13.8vw);
+  height: min(40px, 10.2vw);
+  width: min(40px, 10.2vw)
 `;
 
-const Cup = styled(Icon)`
-  background-image: url(${cup});
-  bottom: min(46px, 11.7vw);
-  right: min(22px, 5.666vw);
-  height: min(99px, 25.4vw);
-  width: min(99px, 25.4vw)
+const Heart = styled(Icon)`
+  background-image: url(${heart});
+  bottom: min(133px, 15.6%);
+  right: min(63px, 7.4vw);
+  height: min(40px, 10.2vw);
+  width: min(45px, 11.53vw)
 `;
 
-const Book = styled(Icon)`
-  background-image: url(${book});
-  bottom: 0;
-  left: 0;
-  height: min(135px, 34.6vw);
-  width: min(153px, 39.2vw)
+const Fire = styled(Icon)`
+  background-image: url(${fire});
+  bottom: min(83px, 9.8%);
+  left: min(45px, 11.53vw);
+  height: min(50px, 12.8vw);
+  width: min(39px, 10vw)
 `;
 
-const Dialogs = styled(Icon)`
-  background-image: url(${dialogs});
-  top: min(25px, 6.9vw);
-  right: min(45px, 11.5vw);
-  height: min(82px, 21vw);
-  width: min(85px, 21.7vw)
+const Star = styled(Icon)`
+  background-image: url(${star});
+  top: min(67px, 7.9%);
+  right: min(127px, 32.5vw);
+  height: min(40px, 10.2vw);
+  width: min(43px, 11.02vw)
 `;
 
-const Question = styled(Icon)`
+const Light = styled(Icon)`
   z-index: 2;
-  background-image: url(${question});
-  top: max(-55px, -14.1vw);
-  right: 0;
-  height: min(75px, 19.2vw);
-  width: min(75px, 19.2vw)
+  background-image: url(${light});
+  top: max(-20px, -5.1vw);
+  right: min(29px, 7.4vw);
+  height: min(40px, 10.2vw);
+  width: min(29px, 7.4vw);
 `;
 
 const TextWrapper = styled.div`
   position: relative;
   padding: min(20px, 5.1vw) min(20px, 5.1vw) min(44px, 11.29vw);
-  background: rgba(255, 255, 255, 0.10);
+  background: white;
   margin: 0 10px;
+  border: 2px solid black;
+  color: black;
   border-radius: var(--borderRadius);
   z-index: 3;
 `;
@@ -87,18 +90,26 @@ const Title = styled(BoldText)`
   }
 `;
 
+const MovedButtonStyled = styled(MovedButton)`
+  background: black;
+  font-weight: 400;
+  font-size: 32px;
+  padding: 4px 15px 6px;
+`;
+
+
 export const Screen1 = () => {
     const { next } = useProgress();
 
     return (
         <Wrapper>
-            <Ball />
-            <Cup />
-            <Book />
-            <Dialogs />
             <Title>Влетай в режим баланса!</Title>
+            <Star />
+            <Ball />
+            <Fire />
+            <Heart />
             <TextWrapper>
-                <Question />
+                <Light />
                 <CommonText>
                     Учёба, работа и личная жизнь {'\n'}заставляют тебя разрываться? Или ты только готовишься начать карьеру и со страхом представляешь этих трёх всадников вместе?
                 </CommonText>
@@ -110,7 +121,7 @@ export const Screen1 = () => {
                 <CommonText>
                     Решай жизненные уравнения вместе с QIWI и повышай уровень своих скиллов ;)
                 </CommonText>
-                <MovedButton onClick={next}>В ИГРУ</MovedButton>
+                <MovedButtonStyled onClick={next}>В игру</MovedButtonStyled>
             </TextWrapper>
         </Wrapper>
     )

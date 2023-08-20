@@ -37,6 +37,6 @@ export const DoneModal = ({onNext}) => (
                 {'Молодец — \nвсё верно!'}
             </CommonText>
         </Info>
-        <Button onNext={onNext}>Идти дальше</Button>
+        <Button onClick={onNext}>Идти дальше</Button>
     </Wrapper>
 )

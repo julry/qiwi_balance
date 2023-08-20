@@ -26,23 +26,9 @@ const Wrapper = styled.div`
   width: 100%;
   padding: min(44px, 11.7vw) 20px;
   background: #1C1C1C;
-  --cardSize: min(80px, 20vw);
-  --cardBorder: 14px;
-
-  @media screen and (max-height: 800px){
-    --cardBorder: 10px;
-    --cardSize: min(70px, 15vw);
-  }
-  
+ 
   @media screen and (max-height: 700px){
-    --cardBorder: 10px;
-    --cardSize: min(60px, 15vw);
     padding-top: min(30px, 8vw);
-  }
-
-  @media screen and (max-height: 600px){
-    --cardBorder: 10px;
-    --cardSize: min(55px, 16vw);
   }
 `;
 
@@ -223,6 +209,10 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
     const handleRestart = () => {
         if (isIncorrect) setIsIncorrect(false);
         setShownCards(cards);
+        setPoints({
+            upperField: 0,
+            bottomField: 0
+        });
         setFieldCards({
             upperField: [],
             bottomField: []
@@ -284,6 +274,7 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                 </ButtonsBlock>
                 <DndProvider options={HTML5toTouch}>
                     <Field
+                        key={'upperField'}
                         fieldRef={upperFieldRef}
                         cards={fieldCards[FIELDS.upperField]}
                         maxCards={cards.length}
@@ -291,7 +282,6 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                         points={points[FIELDS.upperField]}
                         isNotDrop={isRules || isCorrect}
                         color={'#45B3E9'}
-                        key={'upperField'}
                         isOnTop={isRules && rulesStage === 1}
                     />
                     <CardsPlace
@@ -299,9 +289,11 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                         isNotDrop={isRules || isCorrect}
                         isOnTop={isRules && rulesStage === 0}
                         placeRef={placeRef}
+                        maxCards={cards.length}
                     >
                         {shownCards.map(card => (
                             <Card
+                                key={card.id}
                                 card={card}
                                 isNotDraggable={isRules || isCorrect}
                                 onClick={() => setCardInfo({shown: true, card: card})}
@@ -319,13 +311,13 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                         )}
                     </CardsPlace>
                     <Field
+                        key={'bottomField'}
                         fieldRef={bottomFieldRef}
                         cards={fieldCards[FIELDS.bottomField]}
                         maxCards={cards.length}
                         onCardDrop={handleBottomFieldDrop}
                         points={points[FIELDS.bottomField]}
                         isNotDrop={isRules || isCorrect}
-                        key={'bottomField'}
                         color={'#E94969'}
                         isOnTop={isRules && rulesStage === 1}
                         isBottom

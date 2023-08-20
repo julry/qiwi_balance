@@ -5,7 +5,7 @@ import { Game } from '../../shared/Game';
 import { icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8 } from './icons';
 
 export const Screen6 = () => {
-    const [isLastModal, setIsLastModal] = useState(true);
+    const [isLastModal, setIsLastModal] = useState(false);
     const {next} = useProgress();
 
     const cards = [
@@ -47,8 +47,8 @@ export const Screen6 = () => {
         {
             id: 5,
             text: 'Выбрать онлайн-курс на внутреннем обучающем портале QAMPUS',
-            points: -4,
-            shownPoints: '-4',
+            points: 4,
+            shownPoints: '+4',
             icon: icon6,
         },
         {
@@ -61,8 +61,8 @@ export const Screen6 = () => {
         {
             id: 7,
             text: 'Пойти на ночной концерт со второй половинкой',
-            points: 7,
-            shownPoints: '+12-5',
+            points: 8,
+            shownPoints: '+13-5',
             icon: icon8
         },
     ];

@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const LightText = styled.p`
-    font-weight: 300;
-`;
-
 export const RegularText = styled.p`
     font-weight: 400;
 `;
@@ -19,7 +15,7 @@ export const BoldText = styled.p`
 export const CommonText = styled(MediumText)`
   font-size: 20px;
   
-  @media screen and (max-height: 750px) {
+  @media screen and (max-width: 700px) and (max-height: 750px) {
     font-size: 14px;
   }
 

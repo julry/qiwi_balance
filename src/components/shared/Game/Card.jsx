@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   display: flex;
   width: var(--cardSize);
   height: var(--cardSize);
-  background-color: ${({$bgColor}) => $bgColor ?? "#000000"};
+  background-color: ${({$bgColor}) => $bgColor ?? colors.orange};
   border-radius: var(--cardBorder);
   cursor: ${({$isDraggable}) => $isDraggable ? 'grab' : 'auto'};
 `;
