@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'TTCommons';
+    src: local('TTCommons'), local('TT Commons'),
+    url('./assets/fonts/TTCommons/TTCommons-Regular/TTCommons-Regular.ttf') format('truetype'),
+    url('./assets/fonts/TTCommons/TTCommons-Regular/TTCommons-Regular.eot') format('embedded-opentype'),
+    url('./assets/fonts/TTCommons/TTCommons-Regular/TTCommons-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TTCommons';
+    src: local('TTCommons'), local('TT Commons'),
+    url('./assets/fonts/TTCommons/TTCommons-Light/TTCommons-Light.ttf') format('truetype'),
+    url('./assets/fonts/TTCommons/TTCommons-Light/TTCommons-Light.eot') format('embedded-opentype'),
+    url('./assets/fonts/TTCommons/TTCommons-Light/TTCommons-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TTCommons';
+    src: local('TTCommons'), local('TT Commons'),
+    url('./assets/fonts/TTCommons/TTCommons-Medium/TTCommons-Medium.ttf') format('truetype'),
+    url('./assets/fonts/TTCommons/TTCommons-Medium/TTCommons-Medium.eot') format('embedded-opentype'),
+    url('./assets/fonts/TTCommons/TTCommons-Medium/TTCommons-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TTCommons';
+    src: local('TTCommons'), local('TT Commons'),
+    url('./assets/fonts/TTCommons/TTCommons-Bold/TTCommons-Bold.ttf') format('truetype'),
+    url('./assets/fonts/TTCommons/TTCommons-Bold/TTCommons-Bold.eot') format('embedded-opentype'),
+    url('./assets/fonts/TTCommons/TTCommons-Bold/TTCommons-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
