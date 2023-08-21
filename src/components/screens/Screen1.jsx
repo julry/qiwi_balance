@@ -55,6 +55,14 @@ const Star = styled(Icon)`
   width: min(43px, 11.02vw)
 `;
 
+const Sticker = styled(Icon)`
+  background-image: url(${sticker});
+  bottom: min(28px, 7.1%);
+  right: min(53px, 13.5vw);
+  height: min(56px, 14.3vw);
+  width: min(200px, 51vw)
+`;
+
 const Light = styled(Icon)`
   z-index: 2;
   background-image: url(${light});
@@ -101,7 +109,6 @@ const MovedButtonStyled = styled(MovedButton)`
   bottom: -22px;
 `;
 
-
 export const Screen1 = () => {
     const { next } = useProgress();
 
@@ -112,6 +119,7 @@ export const Screen1 = () => {
             <Ball />
             <Fire />
             <Heart />
+            <Sticker />
             <TextWrapper>
                 <Light />
                 <CommonText>

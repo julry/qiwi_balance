@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.abef2f8d.css",
-    "main.js": "./static/js/main.8fef3c2c.js",
+    "main.css": "./static/css/main.4e8d1a90.css",
+    "main.js": "./static/js/main.58f46a2e.js",
     "static/media/TTCommons-Light.eot": "./static/media/TTCommons-Light.68bef59c130f8ab176db.eot",
     "static/media/TTCommons-Light.ttf": "./static/media/TTCommons-Light.247843dc46ab2495648b.ttf",
     "static/media/TTCommons-Regular.eot": "./static/media/TTCommons-Regular.10743fc2c600aecb7c67.eot",
@@ -14,31 +14,32 @@
     "static/media/TTCommons-Regular.woff": "./static/media/TTCommons-Regular.6e64b30e835e5872e224.woff",
     "static/media/TTCommons-Medium.woff": "./static/media/TTCommons-Medium.8e7d7a3962646adbad25.woff",
     "static/media/TTCommons-Bold.woff": "./static/media/TTCommons-Bold.c132784381576602574d.woff",
-    "static/media/icon2.svg": "./static/media/icon2.cadc34d3ac6ee412600ed6e147bf75ca.svg",
+    "static/media/icon2.svg": "./static/media/icon2.5c4d980df25fa9d4478542e8e2486c19.svg",
     "static/media/icon1.svg": "./static/media/icon1.c790dfe81841a17737551f401d64d6ba.svg",
     "static/media/icon6.svg": "./static/media/icon6.c46153d74029df24c1efba8a2b345952.svg",
     "static/media/errorFace.svg": "./static/media/errorFace.12a1ef3c5f80379484bec90ff581881f.svg",
     "static/media/heartFace.svg": "./static/media/heartFace.f2b5f1966b90fb8c0187c7885d10de5e.svg",
-    "static/media/icon4.svg": "./static/media/icon4.aa7da54f1593575846b1e3d3dac3b208.svg",
+    "static/media/icon4.svg": "./static/media/icon4.d921b6783661a4fb1f53a5fe41f4833a.svg",
     "static/media/winkFace.svg": "./static/media/winkFace.19a0dda56823a484775cf61074a8b800.svg",
-    "static/media/icon3.svg": "./static/media/icon3.1f730aabb5e193202fbf48e86d989196.svg",
+    "static/media/icon3.svg": "./static/media/icon3.7276a40dece9aeac82cfac41bb0a80e2.svg",
     "static/media/ball.svg": "./static/media/ball.b5a6a295afea0f3bbb5030ff3b861c30.svg",
     "static/media/light.svg": "./static/media/light.a7d4d9901089cb5512a8eac125874931.svg",
-    "static/media/icon5.svg": "./static/media/icon5.565d368496f72275802c1d99358433ed.svg",
+    "static/media/icon5.svg": "./static/media/icon5.598252082b90c1dac994f6067441e128.svg",
     "static/media/fire.svg": "./static/media/fire.82028b3312070985ab75e7a8822c9a76.svg",
     "static/media/star.svg": "./static/media/star.d25f523fe8698980986d2f29c6f0b6f6.svg",
     "static/media/icon8.svg": "./static/media/icon8.cd3976232298c12d1cc9957e7149041a.svg",
     "static/media/heart.svg": "./static/media/heart.e963667305b0cf19510f029c0f34af91.svg",
     "static/media/icon7.svg": "./static/media/icon7.9fb230405732fc77357aa9c52a09930f.svg",
+    "static/media/QIWIPixel-Regular.otf": "./static/media/QIWIPixel-Regular.7311d8de303779e758af.otf",
     "static/media/sticker.svg": "./static/media/sticker.691fca5e76bbd158aecf2ecc6c455751.svg",
     "static/media/refresh.svg": "./static/media/refresh.065e7ac6594a4fbd4606450811576912.svg",
     "static/media/askSign.svg": "./static/media/askSign.12eb9dc0f3c8e64b48523a10958ae36e.svg",
     "index.html": "./index.html",
-    "main.abef2f8d.css.map": "./static/css/main.abef2f8d.css.map",
-    "main.8fef3c2c.js.map": "./static/js/main.8fef3c2c.js.map"
+    "main.4e8d1a90.css.map": "./static/css/main.4e8d1a90.css.map",
+    "main.58f46a2e.js.map": "./static/js/main.58f46a2e.js.map"
   },
   "entrypoints": [
-    "static/css/main.abef2f8d.css",
-    "static/js/main.8fef3c2c.js"
+    "static/css/main.4e8d1a90.css",
+    "static/js/main.58f46a2e.js"
   ]
 }

@@ -18,7 +18,7 @@ const Wrapper = styled(FlexWrapper)`
 `;
 
 const CardsWrapper = styled.div`
-  --paddingAmount: calc(var(--cardSize) * 41 / 80);
+  --paddingAmount: calc(var(--cardSize) * 48 / 80);
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, var(--cardSize));
@@ -37,6 +37,7 @@ const CardsWrapper = styled.div`
 
 const Amount = styled.div`
   position: absolute;
+  font-family: 'QiwiPixel', sans-serif;
   ${({$isBottom}) => $isBottom ? 'top: 5px' : 'bottom: 5px'};
   left: 50%;
   transform: translateX(-50%);

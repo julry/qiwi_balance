@@ -1,4 +1,12 @@
 @font-face {
+    font-family: 'QiwiPixel';
+    src: local('QiwiPixel'), local('Qiwi Pixel'),
+    url('./assets/fonts/QiwiPixel/QIWIPixel-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'TTCommons';
     src: local('TTCommons'), local('TT Commons'),
     url('./assets/fonts/TTCommons/TTCommons-Regular/TTCommons-Regular.ttf') format('truetype'),

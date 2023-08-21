@@ -52,24 +52,12 @@ const ButtonsBlock = styled.div`
 const ButtonStyled = styled.button`
   outline: none;
   border: 2px solid white;
-  width: 43px;
-  height: 43px;
+  width: calc(var(--cardSize) * 43 / 80);
+  height: calc(var(--cardSize) * 43 / 80);
   background-repeat: no-repeat;
   background-position: center center;
   background-color: transparent;
-  border-radius: 12px;
-  
-  @media screen and (max-height: 750px) {
-    width: 33px;
-    height: 33px;
-    border-radius: 10px;
-  }
-
-  @media screen and (max-width: 320px) {
-    width: 25px;
-    height: 25px;
-    border-radius: 8px;
-  }
+  border-radius: var(--smallRadius);
 `;
 
 const RefreshButton = styled(ButtonStyled)`
@@ -83,25 +71,15 @@ const RulesButton = styled(ButtonStyled)`
 `;
 
 const LevelInfo = styled.div`
-  font-size: 24px;
+  display: flex;
+  align-items: center;
+  --fontSize: calc(var(--cardSize) * 24 / 80);
+  font-family: 'QiwiPixel', sans-serif;
+  font-size: max(18px, var(--fontSize));
   line-height: 24px;
   font-weight: bold;
-  padding: 10px;
-  height: 43px;
+  height: calc(var(--cardSize) * 43 / 80);
   border-radius: 12px;
-  
-  @media screen and (max-height: 750px) {
-    padding: 5px 10px;
-    height: 33px;
-    border-radius: 10px;
-  }
-
-  @media screen and (max-width: 320px) {
-    padding: 1px 10px;
-    font-size: 18px;
-    height: 25px;
-    border-radius: 8px;
-  }
 `;
 
 const IncorrectModal = styled(Modal)`
