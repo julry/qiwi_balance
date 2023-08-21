@@ -22,7 +22,7 @@ export const Screen3 = () => {
         {
             id: 2,
             text: 'Найти рефы для новой фичи в скоуп',
-            points: 3,
+            points: -3,
             shownPoints: '-10+7',
             icon: icon3,
         },
@@ -36,8 +36,8 @@ export const Screen3 = () => {
         {
             id: 4,
             text: 'Блеснуть умом на квизе с коллегами',
-            points: -3,
-            shownPoints: '-4+1',
+            points: 3,
+            shownPoints: '+4-1',
             icon: icon5
         },
     ];

@@ -4,8 +4,11 @@ import { colors } from '../colors';
 
 const Wrapper = styled.div`
   position: absolute;
-  inset: 0;
-  border-radius: 12px;
+  top: -10px;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  border-radius: var(--smallRadius);
   background: #000;
   display: flex;
   align-items: center;
@@ -16,11 +19,15 @@ const CloseIcon = styled.div`
   position: absolute;
   top: 13px;
   right: 16px;
+  z-index: 4;
+  width: 22px;
+  height: 22px;
   
   &::before {
     position: absolute;
-    top:0;
-    right: 0;
+    top: 0;
+    right: 10px;  
+    z-index: 4;
     content: '';
     width: 2px;
     height: 22px;
@@ -33,12 +40,13 @@ const CloseIcon = styled.div`
     content: '';
     position: absolute;
     top:0;
-    right: 0;
+    left: 10px;
     width: 2px;
     height: 22px;
     transform: rotate(-45deg);
     background: white;
     border-radius: 5px;
+    z-index: 4;
   }
 `;
 
@@ -51,6 +59,7 @@ const CardWrapper = styled.div`
   height: calc(var(--imageWidth) + 35px);
   display: flex;
   justify-content: flex-end;
+  z-index: 1;
 `;
 
 const Image = styled.div`
@@ -65,17 +74,20 @@ const Image = styled.div`
 
 const TextStyled = styled(CommonText)`
   max-width: 57%;
+  z-index: 1;
 `;
 
 const PointsWrapper = styled.div`
   position: relative;
-  font-size: 16px;
+  --fontSize: calc(var(--cardSize) * 16 / 80);
+  --height: calc(var(--cardSize) * 20 / 80);
+  font-size: max(14px, var(--fontSize));
   font-weight: bold;
   padding: 2px 6px;
   min-width: 32px;
-  height: 20px;
+  height: max(var(--height), 18);
   text-align: center;
-  border-radius: 12px;
+  border-radius: var(--smallRadius);
   background: ${colors.purple};
 `;
 

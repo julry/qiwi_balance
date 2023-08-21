@@ -3,32 +3,25 @@ import { colors } from './colors';
 
 const ButtonStyled = styled.button`
   outline: none;
+  --fontSize: calc(var(--cardSize) * 24 / 80);
   background: ${colors.orange};
   border: 2px solid white;
   border-radius: 8px;
-  font-size: 24px;
+  font-size: max(var(--fontSize), 18px);
   font-weight: 700;
-  padding: 10px 10px 10px;
-  height: 44px;
+  padding: calc(var(--cardSize) * 10 / 80);
+  height: calc(var(--cardSize) * 44 / 80);
+  min-height: 30px;
   color: white;
   min-width: max-content;
-  
-  @media screen and (max-height: 750px) {
-    font-size: 18px;
-    height: 30px;
-    padding: 5px;
-  }
 `;
 
 const MovedButtonStyled = styled(ButtonStyled)`
   position: absolute;
-  bottom: -22px;
+  --bottom: calc(var(--cardSize) * -22 / 80);
+  bottom: max(var(--bottom), -15px);
   left: 50%;
   transform: translateX(-50%);
-
-  @media screen and (max-height: 750px) {
-    bottom: -15px;
-  }
 `;
 
 export const Button = (props) => <ButtonStyled {...props} />;

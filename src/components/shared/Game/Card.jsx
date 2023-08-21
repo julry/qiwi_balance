@@ -23,22 +23,25 @@ const StyledPreview = styled(Wrapper)`
 
 const PointWrapper = styled.div`
   position: absolute;
-  padding: 2px 6px 0;
-  font-size: 16px;
+  padding: 3px 6px 0;
+  --fontSize: calc(var(--cardSize) * 16 / 80);
+  --bottom: calc(var(--cardSize) * -6 / 80); 
+  font-size: max(14px, var(--fontSize));
   font-weight: bold;
-  min-width: 32px;
+  min-width: calc(var(--cardSize) * 32 / 80);
+  width: max-content;
   text-align: center;
-  bottom: -6px;
-  border-radius: 12px;
+  bottom: max(var(--bottom), -8px);
+  border-radius: var(--smallRadius);
   background: ${colors.purple};
   left: 50%;
   transform: translateX(-50%);
 `;
 
 const Icon = styled.img`
-  margin: ${({$isShowPoints}) => $isShowPoints ? 'auto auto calc(var(--cardSize) * 28 / 80)' : 'auto'};
-  width: calc(var(--cardSize) * 42 / 80);
-  ${({$isShowPoints}) => $isShowPoints ? 'height: calc(var(--cardSize) * 42 / 80);' : ''};
+  margin: ${({$isShowPoints}) => $isShowPoints ? '0 auto auto' : 'auto'};
+  width: calc(var(--cardSize) * 60 / 80);
+  height: calc(var(--cardSize) * 60 / 80);
 `;
 
 export const Card = ({ className, card, onDragStart, color, isShowPoints, onClick, isNotDraggable = false }) => {

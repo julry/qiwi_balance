@@ -5,9 +5,10 @@ import { useProgressInit } from './hooks/useProgressInit';
 import { FlexWrapper } from './components/shared/FlexWrapper';
 
 const Wrapper = styled(FlexWrapper)`
-  --borderRadius: 20px;
+  --borderRadius: calc(var(--cardSize) * 20 / 80);
   --cardSize: min(80px, 20vw);
   --cardBorder: 14px;
+  --smallRadius: calc(var(--cardSize) * 12 / 80);
   height: ${({height}) => height}px;
   overflow-x: hidden;
   align-items: center;

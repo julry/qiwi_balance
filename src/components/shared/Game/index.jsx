@@ -221,10 +221,10 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
 
     useEffect(() => {
        if (shownCards.length > 0) return;
-
-       if (points[FIELDS.upperField] === points[FIELDS.bottomField]) setIsCorrect(true);
-       else setIsIncorrect(true);
-
+       setTimeout(() => {
+           if (points[FIELDS.upperField] === points[FIELDS.bottomField]) setIsCorrect(true);
+           else setIsIncorrect(true);
+       }, 300);
     }, [points, shownCards]);
 
     useEffect(() => {

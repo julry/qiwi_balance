@@ -66,9 +66,11 @@ const Light = styled(Icon)`
 
 const TextWrapper = styled.div`
   position: relative;
+  width: calc(100% - 20px);
+  max-width: 370px;
   padding: min(20px, 5.1vw) min(20px, 5.1vw) min(44px, 11.29vw);
   background: white;
-  margin: 0 10px;
+  margin: 0 auto;
   border: 2px solid black;
   color: black;
   border-radius: var(--borderRadius);
@@ -95,6 +97,8 @@ const MovedButtonStyled = styled(MovedButton)`
   font-weight: 400;
   font-size: 32px;
   padding: 4px 15px 6px;
+  min-height: 44px;
+  bottom: -22px;
 `;
 
 
@@ -119,7 +123,7 @@ export const Screen1 = () => {
                 </CommonText>
                 <br/>
                 <CommonText>
-                    Решай жизненные уравнения вместе с QIWI и повышай уровень своих скиллов ;)
+                    Решай жизненные уравнения вместе {'\n'}с QIWI и повышай уровень своих скиллов ;)
                 </CommonText>
                 <MovedButtonStyled onClick={next}>В игру</MovedButtonStyled>
             </TextWrapper>

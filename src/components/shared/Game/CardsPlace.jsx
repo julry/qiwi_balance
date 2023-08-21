@@ -4,7 +4,7 @@ import { mergeRefs } from 'react-merge-refs';
 
 const Wrapper = styled.div`
   --gridGap: min(20px, 5.1vw);
-  --gridPadding: ${({$isOnTop}) => $isOnTop ? '4px' : 0};
+  --gridPadding: ${({$isOnTop}) => $isOnTop ? '4px 4px 10px' : '0'};
   position: relative;
   width: ${({$isOnTop}) => $isOnTop ? 'calc(100% + 8px)' : '100%'};
   display: grid;
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   column-gap: min(10px, 2.5vw);
   margin: min(23px, 6vw) auto;
   align-items: center;
-  min-height: calc(2 * var(--cardSize) + var(--gridGap) + 2 * var(--gridPadding));
+  min-height: calc(2 * var(--cardSize) + var(--gridGap));
 
   ${({$isOnTop}) => $isOnTop ? 'transform: translateX(-4px)' : ''};
   z-index: ${({$isOnTop}) => $isOnTop ? 100 : 3};

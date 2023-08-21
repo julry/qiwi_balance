@@ -5,7 +5,7 @@ import { Game } from '../../shared/Game';
 import { icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8 } from './icons';
 
 export const Screen6 = () => {
-    const [isLastModal, setIsLastModal] = useState(false);
+    const [isLastModal, setIsLastModal] = useState(true);
     const {next} = useProgress();
 
     const cards = [

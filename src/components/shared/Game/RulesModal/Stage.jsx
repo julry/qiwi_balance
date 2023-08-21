@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   position: absolute;
   background: #000;
   border-radius: var(--borderRadius);
-  padding: min(23px, 5.8vw);
+  padding: calc(var(--cardSize) * 23 / 80) calc(var(--cardSize) * 23 / 80) calc(var(--cardSize) * 33 / 80);
   border: 2px solid white;
   left: 50%;
   transform: translateX(-50%);
@@ -14,10 +14,6 @@ const Wrapper = styled.div`
   width: calc(4 * var(--cardSize) + 30px);
   ${({$style}) => $style};
   
-  @media screen and (max-height: 700px) {
-    padding: min(15px, 4vw) min(15px, 4vw) min(20px, 5.3vw);
-  }
-
   @media screen and (min-width: 700px) {
     width: 550px;
   }
@@ -27,14 +23,19 @@ const ButtonRight = styled(MovedButton)`
   transform: none;
   left: auto;
   right: 26px;
-  width: ${({$isLast}) => $isLast ? '133px' : 'calc(var(--cardSize) / 1.666)'};
+  ${({$isLast}) => $isLast ? 'padding-top: calc(var(--cardSize) * 8 / 80);' : 'display: flex;' +
+          'align-items: center; justify-content: center;'};
+  width: ${({$isLast}) => $isLast ? 'calc(var(--cardSize) * 133 / 80)' : 'calc(var(--cardSize) * 48 / 80)'};
 `;
 
 const ButtonLeft = styled(MovedButton)`
   transform: none;
   left: 26px;
-  width: calc(var(--cardSize) / 1.666);
-  height: calc(var(--cardSize) / 1.864);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--cardSize) * 48 / 80);
+  height: calc(var(--cardSize) * 43 / 80);
 `;
 
 export const Stage = ({ text, isLeft, onPrev, onNext, isLast, style, top}) => (

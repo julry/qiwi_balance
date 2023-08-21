@@ -10,7 +10,7 @@ const Wrapper = styled(FlexWrapper)`
   --gridPadding: 4px;
   background: ${({$color}) => $color};
   border: 2px solid ${({$color}) => $color};
-  border-radius: 20px;
+  border-radius: calc(var(--cardSize) * 20 / 80);
   width: 100%;
   margin: 0 auto;
   background: #1C1C1C;
@@ -18,22 +18,21 @@ const Wrapper = styled(FlexWrapper)`
 `;
 
 const CardsWrapper = styled.div`
-  --paddingAmount: 41px;
+  --paddingAmount: calc(var(--cardSize) * 41 / 80);
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, var(--cardSize));
   grid-template-rows: ${({$maxCards}) => $maxCards > 4 ? 'repeat(2, var(--cardSize))' : '100%'};
   grid-gap: var(--gridGap);
-  padding: var(--gridPadding);
+  padding: 
+          ${({$maxCards, $isBottom}) => $maxCards > 4 && $isBottom ? 'var(--paddingAmount)' : 'var(--gridPadding)'} 
+          var(--gridPadding) 
+          ${({$maxCards, $isBottom}) => $maxCards > 4 && !$isBottom ? 'var(--paddingAmount)' : '0'} 
+          var(--gridPadding);
   flex-shrink: 0;
   width: 100%;
   min-height: calc(2 * var(--cardSize) + var(--gridGap) + 2 * var(--gridPadding) + var(--paddingAmount));
   align-items: center;
-  padding-bottom: ${({$maxCards}) => $maxCards > 4 ? 'var(--paddingAmount)' : '0'};
-
-  @media screen and (max-height: 700px) {
-    --paddingAmount: 35px;
-  }
 `;
 
 const Amount = styled.div`
@@ -41,13 +40,9 @@ const Amount = styled.div`
   ${({$isBottom}) => $isBottom ? 'top: 5px' : 'bottom: 5px'};
   left: 50%;
   transform: translateX(-50%);
-  font-size: 36px;
+  font-size: calc(var(--cardSize) * 36 / 80);
   line-height: 100%;
   vertical-align: middle;
-  
-  @media screen and (max-height: 700px) {
-    font-size: 30px;
-  }
 `;
 
 export const Field = ({ cards, maxCards, onCardDrop, color, isNotDrop, points, isOnTop, fieldRef, isBottom }) => {
@@ -67,7 +62,7 @@ export const Field = ({ cards, maxCards, onCardDrop, color, isNotDrop, points, i
             $color={color}
             $isOnTop={isOnTop}
         >
-            <CardsWrapper $maxCards={maxCards}>
+            <CardsWrapper $maxCards={maxCards} $isBottom={isBottom}>
                 {cards.map(card => (
                     <Card key={card.id} card={card} color={color} isNotDraggable={isNotDrop}/>
                 ))}

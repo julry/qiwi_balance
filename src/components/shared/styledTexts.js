@@ -13,13 +13,5 @@ export const BoldText = styled.p`
 `;
 
 export const CommonText = styled(MediumText)`
-  font-size: 20px;
-  
-  @media screen and (max-width: 700px) and (max-height: 750px) {
-    font-size: 14px;
-  }
-
-  @media screen and (max-width: 320px) {
-    font-size: 13px;
-  }
+  font-size: calc(var(--cardSize) * 20 / 80);
 `;
