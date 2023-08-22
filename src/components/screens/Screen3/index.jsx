@@ -35,7 +35,7 @@ export const Screen3 = () => {
         },
         {
             id: 4,
-            text: 'Блеснуть умом на квизе с коллегами',
+            text: 'Блеснуть умом на квизе\nс коллегами',
             points: 3,
             shownPoints: '+4-1',
             icon: icon5

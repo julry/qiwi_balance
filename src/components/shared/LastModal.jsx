@@ -4,7 +4,7 @@ import { useIMask } from 'react-imask';
 import { BoldText, CommonText, RegularText } from './styledTexts';
 import { Modal } from './Modal';
 import { colors } from './colors';
-import icon from '../../assets/images/winkFace.svg';
+import icon from '../../assets/images/laughFace.svg';
 import iconSend from '../../assets/images/heartFace.svg';
 import { Button } from './Button';
 import { FlexWrapper } from './FlexWrapper';
@@ -14,11 +14,17 @@ const ModalWrapper = styled(Modal)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
+  & div:first-child {
+    max-width: calc(var(--cardSize) * 346 / 80);
+    padding: calc(var(--cardSize) * 20 / 80) calc(var(--cardSize) * 20 / 80)
+            calc(var(--cardSize) * 20 / 80 + 22px) calc(var(--cardSize) * 20 / 80 );
+  }
 `;
 
 const Form = styled(FlexWrapper)`
   margin-top: min(35px, 9.3vw);
-  max-width: min(88.7vw, 350px);
+  max-width: calc(var(--cardSize) * 346 / 80);
 `;
 
 const InputWrapper = styled.div`
@@ -86,6 +92,10 @@ const RadioButtonLabel = styled.label`
   margin: min(20px, 4.5vw) auto;
   text-align: left;
 
+  & span {
+    max-width: 240px;
+  }
+  
   & ${InputRadioButton}:checked + ${RadioIconStyled}:after {
     content: '';
     position: absolute;
@@ -103,6 +113,10 @@ const RadioButtonLabel = styled.label`
       width: 14px;
       height: 14px;
     }
+  };
+  
+  @media screen and (max-width: 400px) {
+    font-size: 8px;
   }
 `;
 
@@ -196,7 +210,7 @@ export const LastModal = ({onNext}) => {
             ) : (
                 <Form>
                     <CommonText>
-                        Частичка крутого IT-сообщества всегда может быть с тобой — участвуй в розыгрыше приза!
+                        Частичка крутого IT-сообщества {'\n'}всегда может быть с тобой — участвуй{'\n'} в розыгрыше приза!
                     </CommonText>
                     <InputWrapper>
                         <InputLabel>Номер телефона</InputLabel>
@@ -219,7 +233,7 @@ export const LastModal = ({onNext}) => {
                         <RadioIconStyled/>
                         <span>
                             Я согласен(а) на <Link href={'https://fut.ru/personal_data_policy/'} target="_blank">
-                            обработку персональных данных</Link> и получение {'\n'}информационных сообщений
+                            обработку персональных данных</Link> и получение информационных сообщений
                         </span>
                     </RadioButtonLabel>
                     <ButtonStyled

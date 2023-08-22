@@ -72,8 +72,10 @@ const Image = styled.div`
   background-size: contain;
 `;
 
-const TextStyled = styled(CommonText)`
-  max-width: 57%;
+const TextWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  width: 57%;
   z-index: 1;
 `;
 
@@ -85,7 +87,7 @@ const PointsWrapper = styled.div`
   font-weight: bold;
   padding: 2px 6px;
   min-width: 32px;
-  height: max(var(--height), 18);
+  height: max(var(--height), 18px);
   text-align: center;
   border-radius: var(--smallRadius);
   background: ${colors.purple};
@@ -100,8 +102,8 @@ export const CardInfo = ({card, onClose}) => (
                 <Image src={card.icon} />
             </PointsWrapper>
         </CardWrapper>
-        <TextStyled>
-            {card.text}
-        </TextStyled>
+        <TextWrapper>
+            <CommonText>{card.text}</CommonText>
+        </TextWrapper>
     </Wrapper>
 );

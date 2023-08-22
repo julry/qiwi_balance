@@ -9,7 +9,7 @@ import light from '../../assets/images/light.svg';
 import sticker from '../../assets/images/sticker.svg';
 import { BoldText, CommonText } from '../shared/styledTexts';
 import { FlexWrapper } from '../shared/FlexWrapper';
-import { Button, MovedButton } from '../shared/Button';
+import { MovedButton } from '../shared/Button';
 
 const Wrapper = styled(FlexWrapper)`
   position: relative;
@@ -123,7 +123,9 @@ export const Screen1 = () => {
             <TextWrapper>
                 <Light />
                 <CommonText>
-                    Учёба, работа и личная жизнь {'\n'}заставляют тебя разрываться? Или ты только готовишься начать карьеру и со страхом представляешь этих трёх всадников вместе?
+                    Учёба, работа и личная жизнь {'\n'}
+                    заставляют тебя разрываться? Или ты только готовишься начать карьеру и со страхом
+                    представляешь этих трёх всадников вместе?
                 </CommonText>
                 <br/>
                 <CommonText>

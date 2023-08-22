@@ -130,8 +130,7 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
         const upperField = chosenCards[FIELDS.upperField].filter(({ id }) => card.id !== id);
         const bottomField = chosenCards[FIELDS.bottomField].filter(({ id }) => card.id !== id);
         const chosenField = chosenCards[addField];
-
-        if (upperField.length !== chosenCards[FIELDS.upperField].length) {
+        if (upperField.length < chosenCards[FIELDS.upperField].length) {
            setPoints(prevPoints =>({
                ...prevPoints,
                [FIELDS.upperField]: chosenCards[FIELDS.upperField]
@@ -139,7 +138,7 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
            }));
         }
 
-        if (bottomField.length !== chosenCards[FIELDS.bottomField].length) {
+        if (bottomField.length < chosenCards[FIELDS.bottomField].length) {
             setPoints(prevPoints =>({
                 ...prevPoints,
                 [FIELDS.bottomField]: chosenCards[FIELDS.bottomField]
@@ -148,7 +147,9 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
         }
 
         if (addField) {
-            chosenField.push(card);
+            if (!chosenField.find(({ id }) => id === card.id)) {
+                chosenField.push(card);
+            }
             setPoints(prevPoints =>({
                 ...prevPoints,
                 [addField]: chosenField.reduce((point, card) => point + card.points, 0)
@@ -199,10 +200,10 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
 
     useEffect(() => {
        if (shownCards.length > 0) return;
-       setTimeout(() => {
-           if (points[FIELDS.upperField] === points[FIELDS.bottomField]) setIsCorrect(true);
-           else setIsIncorrect(true);
-       }, 300);
+        if (points[FIELDS.upperField] === points[FIELDS.bottomField]) setIsCorrect(true);
+        else setTimeout(() => {
+            setIsIncorrect(true);
+        }, 300);
     }, [points, shownCards]);
 
     useEffect(() => {
@@ -221,6 +222,7 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                     topValue = topH + topY + distance;
                     break;
                 default:
+                    topValue = 0;
                     break;
             }
         }
@@ -274,7 +276,7 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                                 key={card.id}
                                 card={card}
                                 isNotDraggable={isRules || isCorrect}
-                                onClick={() => setCardInfo({shown: true, card: card})}
+                                onClick={() => isRules? {} : setCardInfo({shown: true, card: card})}
                                 isShowPoints
                             />
                         ))}

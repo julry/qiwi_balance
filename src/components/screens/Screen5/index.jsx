@@ -8,7 +8,7 @@ export const Screen5 = () => {
         {
             id: 0,
             text: 'Начать писать\nдоклад',
-            points: 6,
+            points: -6,
             shownPoints: '-6',
             icon: icon1,
         },
@@ -49,7 +49,7 @@ export const Screen5 = () => {
         },
         {
             id: 6,
-            text: 'Ужин с друзьями на веранде',
+            text: 'Ужин с друзьями\nна веранде',
             points: 4,
             shownPoints: '+4',
             icon: icon7

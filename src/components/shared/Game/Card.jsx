@@ -39,9 +39,9 @@ const PointWrapper = styled.div`
 `;
 
 const Icon = styled.img`
-  margin: ${({$isShowPoints}) => $isShowPoints ? '0 auto auto' : 'auto'};
-  width: calc(var(--cardSize) * 60 / 80);
-  height: calc(var(--cardSize) * 60 / 80);
+  margin: ${({$isShowPoints}) => $isShowPoints ? 'calc(var(--cardSize) * 7 / 80) auto auto' : 'auto'};
+  width: calc(var(--cardSize) * 50 / 80);
+  height: calc(var(--cardSize) * 50 / 80);
 `;
 
 export const Card = ({ className, card, onDragStart, color, isShowPoints, onClick, isNotDraggable = false }) => {

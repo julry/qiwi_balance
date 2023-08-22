@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { CommonText } from '../../styledTexts';
 import { MovedButton } from '../../Button';
+import { colors } from '../../colors';
 
 const Wrapper = styled.div`
   position: absolute;
-  background: #000;
+  background: ${colors.purple};
   border-radius: var(--borderRadius);
   padding: calc(var(--cardSize) * 23 / 80) calc(var(--cardSize) * 23 / 80) calc(var(--cardSize) * 33 / 80);
   border: 2px solid white;
@@ -13,10 +14,6 @@ const Wrapper = styled.div`
   top: ${({top}) => top}px;
   width: calc(4 * var(--cardSize) + 30px);
   ${({$style}) => $style};
-  
-  @media screen and (min-width: 700px) {
-    width: 550px;
-  }
 `;
 
 const ButtonRight = styled(MovedButton)`
