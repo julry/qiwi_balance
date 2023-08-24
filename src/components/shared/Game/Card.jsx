@@ -42,6 +42,9 @@ const Icon = styled.img`
   margin: ${({$isShowPoints}) => $isShowPoints ? 'calc(var(--cardSize) * 7 / 80) auto auto' : 'auto'};
   width: calc(var(--cardSize) * 50 / 80);
   height: calc(var(--cardSize) * 50 / 80);
+  user-select: none;
+  user-drag: none;
+  pointer-events: none;
 `;
 
 export const Card = ({ className, card, onDragStart, color, isShowPoints, onClick, isNotDraggable = false }) => {
