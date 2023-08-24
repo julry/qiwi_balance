@@ -9,7 +9,7 @@ const ButtonStyled = styled.button`
   border-radius: 8px;
   font-size: max(var(--fontSize), 18px);
   font-weight: 700;
-  padding: calc(var(--cardSize) * 10 / 80);
+  padding: calc(var(--cardSize) * 7 / 80);
   height: calc(var(--cardSize) * 44 / 80);
   min-height: 30px;
   color: white;

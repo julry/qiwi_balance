@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.4e8d1a90.css",
-    "main.js": "./static/js/main.719bb65a.js",
+    "main.js": "./static/js/main.d75247bb.js",
     "static/media/TTCommons-Light.eot": "./static/media/TTCommons-Light.68bef59c130f8ab176db.eot",
     "static/media/TTCommons-Light.ttf": "./static/media/TTCommons-Light.247843dc46ab2495648b.ttf",
     "static/media/TTCommons-Regular.eot": "./static/media/TTCommons-Regular.10743fc2c600aecb7c67.eot",
@@ -33,14 +33,15 @@
     "static/media/icon7.svg": "./static/media/icon7.c54fd184d5fa5758babb149d14fde837.svg",
     "static/media/QIWIPixel-Regular.otf": "./static/media/QIWIPixel-Regular.7311d8de303779e758af.otf",
     "static/media/sticker.svg": "./static/media/sticker.691fca5e76bbd158aecf2ecc6c455751.svg",
+    "static/media/rulesIcon2.svg": "./static/media/rulesIcon2.a6af8afbc5f82d2372bf602eaed4808a.svg",
     "static/media/refresh.svg": "./static/media/refresh.065e7ac6594a4fbd4606450811576912.svg",
     "static/media/askSign.svg": "./static/media/askSign.12eb9dc0f3c8e64b48523a10958ae36e.svg",
     "index.html": "./index.html",
     "main.4e8d1a90.css.map": "./static/css/main.4e8d1a90.css.map",
-    "main.719bb65a.js.map": "./static/js/main.719bb65a.js.map"
+    "main.d75247bb.js.map": "./static/js/main.d75247bb.js.map"
   },
   "entrypoints": [
     "static/css/main.4e8d1a90.css",
-    "static/js/main.719bb65a.js"
+    "static/js/main.d75247bb.js"
   ]
 }

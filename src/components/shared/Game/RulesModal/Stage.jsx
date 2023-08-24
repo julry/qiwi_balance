@@ -12,7 +12,8 @@ const Wrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
   top: ${({top}) => top}px;
-  width: calc(4 * var(--cardSize) + 30px);
+  min-width: calc(4 * var(--cardSize) + 30px);
+  width: calc(100% - 2 * 5.1vw);
   ${({$style}) => $style};
 `;
 

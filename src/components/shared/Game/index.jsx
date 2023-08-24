@@ -14,6 +14,7 @@ import { CardsPlace } from './CardsPlace';
 import { RulesModal } from './RulesModal';
 import { CardInfo } from './CardInfo';
 import { DoneModal } from './DoneModal';
+import { rulesCards } from './game-constants';
 
 const FIELDS = {
     upperField: 'upperField',
@@ -24,7 +25,7 @@ const Wrapper = styled.div`
   position: relative;
   height: 100%;
   width: 100%;
-  padding: min(44px, 11.7vw) 20px;
+  padding: min(44px, 11.7vw) min(20px, 5.1vw);
   background: #1C1C1C;
  
   @media screen and (max-height: 700px){
@@ -35,7 +36,8 @@ const Wrapper = styled.div`
 const Content = styled(FlexWrapper)`
   margin: 0 auto;
   align-items: center;
-  width: calc(4 * var(--cardSize) + 30px);
+  min-width: calc(4 * var(--cardSize) + 30px);
+  width: 100%;
 `;
 
 const ButtonsBlock = styled.div`
@@ -263,6 +265,7 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                         isNotDrop={isRules || isCorrect}
                         color={'#45B3E9'}
                         isOnTop={isRules && rulesStage === 1}
+                        isRules={isRules}
                     />
                     <CardsPlace
                         onCardDrop={handleReturnCard}
@@ -271,20 +274,35 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                         placeRef={placeRef}
                         maxCards={cards.length}
                     >
-                        {shownCards.map(card => (
-                            <Card
-                                key={card.id}
-                                card={card}
-                                isNotDraggable={isRules || isCorrect}
-                                onClick={() => isRules? {} : setCardInfo({shown: true, card: card})}
-                                isShowPoints
-                            />
-                        ))}
-                        {cardInfo.shown && (
-                            <CardInfo
-                                card={cardInfo.card}
-                                onClose={() => setCardInfo({shown: false, card: {}})}
-                            />
+                        {isRules ? (
+                            <>
+                                {rulesCards.map(card => (
+                                    <Card
+                                        key={card.id}
+                                        card={card}
+                                        isNotDraggable
+                                        isShowPoints
+                                    />
+                                ))}
+                            </>
+                        ): (
+                            <>
+                                {shownCards.map(card => (
+                                    <Card
+                                        key={card.id}
+                                        card={card}
+                                        isNotDraggable={isRules || isCorrect}
+                                        onClick={() => isRules? {} : setCardInfo({shown: true, card: card})}
+                                        isShowPoints
+                                    />
+                                ))}
+                                {cardInfo.shown && (
+                                    <CardInfo
+                                        card={cardInfo.card}
+                                        onClose={() => setCardInfo({shown: false, card: {}})}
+                                    />
+                                )}
+                            </>
                         )}
                         {isCorrect && (
                             <DoneModal onNext={onNext}/>
@@ -300,6 +318,7 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                         isNotDrop={isRules || isCorrect}
                         color={'#E94969'}
                         isOnTop={isRules && rulesStage === 1}
+                        isRules={isRules}
                         isBottom
                     />
                 </DndProvider>
@@ -312,7 +331,7 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                 {isIncorrect && (
                     <IncorrectModal
                         text={
-                            'Упс! Давай подумаем ещё — \nв блоках разная энергия. \n' +
+                            'Упс! Давай подумаем ещё — в блоках разная энергия. \n' +
                             '\n' +
                             'Попробуй другую комбинацию, чтобы по итогу получить баланс.'
                         }

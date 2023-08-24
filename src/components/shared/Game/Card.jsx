@@ -62,7 +62,7 @@ export const Card = ({ className, card, onDragStart, color, isShowPoints, onClic
     const CardPreview = (props) => {
         const {display, style} = usePreview();
 
-        if (!display) {
+        if (!display || !style) {
             return null;
         }
 

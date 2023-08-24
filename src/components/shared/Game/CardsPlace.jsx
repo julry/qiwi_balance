@@ -3,12 +3,13 @@ import { useDrop } from 'react-dnd';
 import { mergeRefs } from 'react-merge-refs';
 
 const Wrapper = styled.div`
-  --gridGap: min(20px, 5.1vw);
+  --gridGap: min(10px, 2.6vw);
   --gridPadding: ${({$isOnTop}) => $isOnTop ? '4px 4px 10px' : '0'};
   position: relative;
   width: ${({$isOnTop}) => $isOnTop ? 'calc(100% + 8px)' : '100%'};
   display: grid;
-  grid-template-columns: repeat(4, var(--cardSize));
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: ${({$maxCards}) => $maxCards > 4 ? 'repeat(2, var(--cardSize))' : '100%'};
   row-gap: var(--gridGap);
   column-gap: min(10px, 2.5vw);
@@ -21,9 +22,11 @@ const Wrapper = styled.div`
   background: #1C1C1C;
   border-radius: var(--borderRadius);
   padding: var(--gridPadding);
-  
-  @media screen and (max-height: 750px) {
-    row-gap: min(10px, 2.6vw);
+
+  @media screen and (max-height: 800px) and (min-width: 330px){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 `;
 

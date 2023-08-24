@@ -22,8 +22,8 @@ export const Screen5 = () => {
         {
             id: 2,
             text: 'Задать вопросы \nна прямом эфире \nс CEO QIWI',
-            points: -2,
-            shownPoints: '-3+1',
+            points: 2,
+            shownPoints: '+3-1',
             icon: icon3,
         },
         {
