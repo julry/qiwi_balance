@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: ${({$maxCards}) => $maxCards > 4 ? 'repeat(2, var(--cardSize))' : '100%'};
   row-gap: var(--gridGap);
-  column-gap: min(10px, 2.5vw);
+  column-gap: var(--gridGap);
   margin: min(23px, 6vw) auto;
   align-items: center;
   min-height: calc(2 * var(--cardSize) + var(--gridGap));
@@ -24,9 +24,14 @@ const Wrapper = styled.div`
   padding: var(--gridPadding);
 
   @media screen and (max-height: 800px) and (min-width: 330px){
+    --gridGap: min(20px, 5.1vw);
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+  }
+
+  @media screen and (min-height: 1000px){
+    --gridGap: min(25px, 5.1vw);
   }
 `;
 

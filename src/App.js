@@ -30,6 +30,11 @@ const Wrapper = styled(FlexWrapper)`
     --cardBorder: 10px;
     --cardSize: min(55px, 16vw);
   }
+
+  @media screen and (min-height: 1000px){
+    --cardBorder: 16px;
+    --cardSize: min(90px, 16vw);
+  }
 `;
 
 const ComponentWrapper = styled(FlexWrapper)`

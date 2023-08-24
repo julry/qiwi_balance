@@ -23,7 +23,6 @@ const CardsWrapper = styled.div`
   position: relative;
   display: grid;
   justify-content: space-between; 
-  align-items: center;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: ${({$maxCards}) => $maxCards > 4 ? 'repeat(2, var(--cardSize))' : '100%'};
   grid-gap: var(--gridGap);
