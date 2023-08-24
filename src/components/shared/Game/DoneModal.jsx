@@ -19,6 +19,14 @@ const Info = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: min(24px, 4.8vw);
+  
+  @media screen and (max-height: 800px) and (min-width: 330px) {
+    white-space: normal;
+    
+    & p {
+      font-size: 16px !important;
+    }
+  }
 `;
 
 const Icon = styled.div`
@@ -26,8 +34,11 @@ const Icon = styled.div`
   width: var(--cardSize);
   height: var(--cardSize);
   margin-right: 33px;
-`;
 
+  @media screen and (max-height: 800px) and (min-width: 330px) {
+    margin-right: 20px;
+  }
+`;
 
 export const DoneModal = ({onNext}) => (
     <Wrapper>

@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   --gridGap: min(10px, 2.6vw);
   --gridPadding: ${({$isOnTop}) => $isOnTop ? '4px 4px 10px' : '0'};
   position: relative;
-  width: ${({$isOnTop}) => $isOnTop ? 'calc(100% + 8px)' : '100%'};
+  width: ${({$isOnTop}) => $isOnTop ? 'calc(4 * var(--cardSize) + 3 * var(--gridGap) + 8px)' : 'calc(4 * var(--cardSize) + 3 * var(--gridGap))'};
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(4, 1fr);
@@ -16,7 +16,6 @@ const Wrapper = styled.div`
   margin: min(23px, 6vw) auto;
   align-items: center;
   min-height: calc(2 * var(--cardSize) + var(--gridGap));
-
   ${({$isOnTop}) => $isOnTop ? 'transform: translateX(-4px)' : ''};
   z-index: ${({$isOnTop}) => $isOnTop ? 100 : 3};
   background: #1C1C1C;

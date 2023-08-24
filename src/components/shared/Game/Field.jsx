@@ -7,6 +7,7 @@ import { rulesCardBottom, rulesCardUpper } from './game-constants';
 
 const Wrapper = styled(FlexWrapper)`
   position: relative;
+  --gridColumnGap: calc((100% - 4 * var(--cardSize)) / 3);
   --gridGap: min(6px, 1.6vw);
   --gridPadding: 4px;
   background: ${({$color}) => $color};
@@ -16,6 +17,10 @@ const Wrapper = styled(FlexWrapper)`
   margin: 0 auto;
   background: #1C1C1C;
   z-index: ${({$isOnTop}) => $isOnTop ? 100 : 1};
+  
+  @media screen and (max-height: 800px) and (min-width: 330px) {
+    --gridPadding: min(2.5vw, 15px);
+  }
 `;
 
 const CardsWrapper = styled.div`
@@ -24,12 +29,13 @@ const CardsWrapper = styled.div`
   display: grid;
   justify-content: space-between; 
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: ${({$maxCards}) => $maxCards > 4 ? 'repeat(2, var(--cardSize))' : '100%'};
-  grid-gap: var(--gridGap);
+  grid-template-rows: repeat(2, var(--cardSize));
+  grid-column-gap: var(--gridColumnGap);
+  grid-row-gap: var(--gridGap);
   padding: 
-          ${({$maxCards, $isBottom}) => $maxCards > 4 && $isBottom ? 'var(--paddingAmount)' : 'var(--gridPadding)'} 
+          ${({$isBottom}) => $isBottom ? 'var(--paddingAmount)' : 'var(--gridPadding)'} 
           var(--gridPadding) 
-          ${({$maxCards, $isBottom}) => $maxCards > 4 && !$isBottom ? 'var(--paddingAmount)' : '0'} 
+          ${({$isBottom}) => !$isBottom ? 'var(--paddingAmount)' : '0'} 
           var(--gridPadding);
   flex-shrink: 0;
   width: 100%;
@@ -71,7 +77,7 @@ export const Field = ({ cards, maxCards, onCardDrop, color, isNotDrop, points, i
             $color={color}
             $isOnTop={isOnTop}
         >
-            <CardsWrapper $maxCards={maxCards} $isBottom={isBottom}>
+            <CardsWrapper $isBottom={isBottom}>
                 {isRules ? (
                     <>
                         {rulesCards.map(card => (
