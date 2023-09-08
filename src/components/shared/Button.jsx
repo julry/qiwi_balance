@@ -5,12 +5,12 @@ const ButtonStyled = styled.button`
   outline: none;
   --fontSize: calc(var(--cardSize) * 24 / 80);
   background: ${colors.orange};
-  border: 2px solid white;
+  border: 1px solid black;
   border-radius: 8px;
   font-size: max(var(--fontSize), 18px);
   font-weight: 700;
-  padding: calc(var(--cardSize) * 7 / 80);
-  height: calc(var(--cardSize) * 44 / 80);
+  padding: calc(var(--cardSize) * 15 / 80) calc(var(--cardSize) * 23 / 80) calc(var(--cardSize) * 23 / 80);
+  height: calc(var(--cardSize) * 60 / 80);
   min-height: 30px;
   color: white;
   min-width: max-content;

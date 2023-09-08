@@ -12,8 +12,6 @@ const Wrapper = styled(FlexWrapper)`
   height: ${({height}) => height}px;
   overflow-x: hidden;
   align-items: center;
-  background: #1C1C1C;
-  color: white;
   white-space: pre-line;
 
   @media screen and (max-height: 800px){
@@ -43,7 +41,6 @@ const ComponentWrapper = styled(FlexWrapper)`
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background: #1C1C1C;
 
   @media screen and (min-width: 640px) {
     max-width: 500px;

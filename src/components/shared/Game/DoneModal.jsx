@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import face from '../../../assets/images/heartFace.svg';
 import { Button } from '../Button';
 import { CommonText } from '../styledTexts';
+import { colors } from '../colors';
 
 const Wrapper = styled.div`
   position: absolute;
   inset: 0;
   border-radius: 12px;
-  background: #000;
+  background: ${colors.orange};
   display: flex;
   flex-direction: column;
   align-items: center;

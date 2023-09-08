@@ -3,7 +3,7 @@ import { colors } from './colors';
 import { ModalWrapper } from './ModalWrapper';
 import { FlexWrapper } from './FlexWrapper';
 import { CommonText } from './styledTexts';
-import { MovedButton } from './Button';
+import { Button } from './Button';
 
 const Rectangle = styled(FlexWrapper)`
   --padding: min(20px, 5.1vw);
@@ -13,7 +13,7 @@ const Rectangle = styled(FlexWrapper)`
   border-radius: var(--borderRadius);
   max-width: min(88.7vw, 350px);
   margin: 0 auto;
-  border: 1px solid white;
+  color: white;
 `;
 
 const Icon = styled.div`
@@ -23,13 +23,17 @@ const Icon = styled.div`
   background: url(${({$icon}) => $icon}) no-repeat 0 0 /cover;
 `;
 
+const ButtonStyled = styled(Button)`
+  margin: min(20px, 5.1vw) auto 0;
+`;
+
 export const Modal = ({icon, text, onNext, btnText, children, ...restProps}) => (
     <ModalWrapper {...restProps}>
         <Rectangle>
             <Icon $icon={icon}/>
             <CommonText>{text}</CommonText>
-            <MovedButton onClick={onNext}>{btnText}</MovedButton>
         </Rectangle>
+        <ButtonStyled onClick={onNext}>{btnText}</ButtonStyled>
         {children}
     </ModalWrapper>
 )

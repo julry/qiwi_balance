@@ -9,8 +9,8 @@ const ModalWrapper = styled(Modal)`
 
 const Link = styled(CommonText)`
   padding-bottom: 1px;
-  border-bottom: 1px solid white;
-  margin: min(52px, 10vw) auto 0;
+  border-bottom: 1px solid black;
+  margin: min(20px, 5vw) auto 0;
   width: max-content;
   cursor: pointer;
 `;

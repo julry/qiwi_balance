@@ -9,7 +9,8 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   border-radius: var(--smallRadius);
-  background: #000;
+  background: ${colors.orange};
+  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +33,7 @@ const CloseIcon = styled.div`
     width: 2px;
     height: 22px;
     transform: rotate(45deg);
-    background: white;
+    background: black;
     border-radius: 5px;
   }
 
@@ -44,7 +45,7 @@ const CloseIcon = styled.div`
     width: 2px;
     height: 22px;
     transform: rotate(-45deg);
-    background: white;
+    background: black;
     border-radius: 5px;
     z-index: 4;
   }
@@ -87,6 +88,7 @@ const PointsWrapper = styled.div`
   font-weight: bold;
   padding: 2px 6px;
   min-width: 32px;
+  color: white;
   height: max(var(--height), 18px);
   text-align: center;
   border-radius: var(--smallRadius);

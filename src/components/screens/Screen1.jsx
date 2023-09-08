@@ -90,6 +90,7 @@ const Title = styled(BoldText)`
   margin: min(140px, 30.2vw) auto min(20px, 5.1vw);
   text-align: center;
   text-transform: uppercase;
+  color: white;
 
   @media screen and (max-height: 700px) {
     font-size: 36px;

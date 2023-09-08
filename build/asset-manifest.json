@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.4e8d1a90.css",
-    "main.js": "./static/js/main.abd68adb.js",
+    "main.js": "./static/js/main.ab6a0a19.js",
     "static/media/TTCommons-Light.eot": "./static/media/TTCommons-Light.68bef59c130f8ab176db.eot",
     "static/media/TTCommons-Light.ttf": "./static/media/TTCommons-Light.247843dc46ab2495648b.ttf",
     "static/media/TTCommons-Regular.eot": "./static/media/TTCommons-Regular.10743fc2c600aecb7c67.eot",
@@ -13,35 +13,38 @@
     "static/media/TTCommons-Light.woff": "./static/media/TTCommons-Light.7380df232a2004b6ac52.woff",
     "static/media/TTCommons-Regular.woff": "./static/media/TTCommons-Regular.6e64b30e835e5872e224.woff",
     "static/media/TTCommons-Medium.woff": "./static/media/TTCommons-Medium.8e7d7a3962646adbad25.woff",
+    "static/media/icon2.svg": "./static/media/icon2.b76a694500cfe861e090e00fc2f3c343.svg",
+    "static/media/icon7.svg": "./static/media/icon7.a8ed19ec24c81a6d3691bd23d2a024c7.svg",
     "static/media/TTCommons-Bold.woff": "./static/media/TTCommons-Bold.c132784381576602574d.woff",
-    "static/media/icon2.svg": "./static/media/icon2.78ec171a65f9940cf8eb09437b1caba4.svg",
-    "static/media/icon1.svg": "./static/media/icon1.2ae7273441a01516bd7f57fb6a345b7e.svg",
+    "static/media/icon4.svg": "./static/media/icon4.1afe6ed0917c19aef253d344562dac0f.svg",
+    "static/media/topRulesIcon2.svg": "./static/media/topRulesIcon2.28ad16d816ef476f0afdcf0ce95a3080.svg",
     "static/media/icon6.svg": "./static/media/icon6.18999eb4a6f3e355eb45bc3343c2a17c.svg",
+    "static/media/icon1.svg": "./static/media/icon1.2ae7273441a01516bd7f57fb6a345b7e.svg",
     "static/media/errorFace.svg": "./static/media/errorFace.12a1ef3c5f80379484bec90ff581881f.svg",
     "static/media/laughFace.svg": "./static/media/laughFace.b9b39f3e1dabba32c301e34e0dd4ae8e.svg",
     "static/media/heartFace.svg": "./static/media/heartFace.f2b5f1966b90fb8c0187c7885d10de5e.svg",
     "static/media/winkFace.svg": "./static/media/winkFace.19a0dda56823a484775cf61074a8b800.svg",
-    "static/media/icon4.svg": "./static/media/icon4.55e8651801797ec76094da8d5ded809f.svg",
+    "static/media/topRulesIcon5.svg": "./static/media/topRulesIcon5.edd61409335eb1a8a1591463749333fa.svg",
     "static/media/ball.svg": "./static/media/ball.b5a6a295afea0f3bbb5030ff3b861c30.svg",
     "static/media/icon3.svg": "./static/media/icon3.5b37c17ed8d3ef0ce4a22dbad6a6b9ba.svg",
     "static/media/light.svg": "./static/media/light.a7d4d9901089cb5512a8eac125874931.svg",
     "static/media/icon5.svg": "./static/media/icon5.7d0aa3fd959f5bb9f6b45d46b08f8620.svg",
     "static/media/fire.svg": "./static/media/fire.82028b3312070985ab75e7a8822c9a76.svg",
     "static/media/star.svg": "./static/media/star.d25f523fe8698980986d2f29c6f0b6f6.svg",
-    "static/media/icon8.svg": "./static/media/icon8.11b6c3f0140b5e9c00ade6d47f4b3c47.svg",
+    "static/media/icon8.svg": "./static/media/icon8.56f3c5ce31fcbb41ba4d766b1d2e8635.svg",
     "static/media/heart.svg": "./static/media/heart.e963667305b0cf19510f029c0f34af91.svg",
-    "static/media/icon7.svg": "./static/media/icon7.c54fd184d5fa5758babb149d14fde837.svg",
     "static/media/QIWIPixel-Regular.otf": "./static/media/QIWIPixel-Regular.7311d8de303779e758af.otf",
     "static/media/sticker.svg": "./static/media/sticker.691fca5e76bbd158aecf2ecc6c455751.svg",
     "static/media/rulesIcon2.svg": "./static/media/rulesIcon2.a6af8afbc5f82d2372bf602eaed4808a.svg",
-    "static/media/refresh.svg": "./static/media/refresh.065e7ac6594a4fbd4606450811576912.svg",
-    "static/media/askSign.svg": "./static/media/askSign.12eb9dc0f3c8e64b48523a10958ae36e.svg",
+    "static/media/levelBg.svg": "./static/media/levelBg.8adc3ad0027908856e81ee960bee2924.svg",
+    "static/media/refresh.svg": "./static/media/refresh.a1307f3e53a408a332f524c35a970890.svg",
+    "static/media/askSign.svg": "./static/media/askSign.679943a789b38cf414016e1d3d0fd2db.svg",
     "index.html": "./index.html",
     "main.4e8d1a90.css.map": "./static/css/main.4e8d1a90.css.map",
-    "main.abd68adb.js.map": "./static/js/main.abd68adb.js.map"
+    "main.ab6a0a19.js.map": "./static/js/main.ab6a0a19.js.map"
   },
   "entrypoints": [
     "static/css/main.4e8d1a90.css",
-    "static/js/main.abd68adb.js"
+    "static/js/main.ab6a0a19.js"
   ]
 }

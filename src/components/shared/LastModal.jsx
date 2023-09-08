@@ -18,29 +18,39 @@ const ModalWrapper = styled(Modal)`
   & div:first-child {
     max-width: calc(var(--cardSize) * 346 / 80);
     padding: calc(var(--cardSize) * 20 / 80) calc(var(--cardSize) * 20 / 80)
-            calc(var(--cardSize) * 20 / 80 + 22px) calc(var(--cardSize) * 20 / 80 );
+            calc(var(--cardSize) * 20 / 80 + 22px) calc(var(--cardSize) * 20 / 80);
+
+    @media screen and (max-height: 600px) {
+      max-width: 90vw;
+    }
   }
 `;
 
 const Form = styled(FlexWrapper)`
   margin-top: min(35px, 9.3vw);
   max-width: calc(var(--cardSize) * 346 / 80);
+  
+  @media screen and (max-height: 600px) {
+    margin-top: min(20px, 5vw);
+  }
 `;
 
 const InputWrapper = styled.div`
   position: relative;
   margin-top: min(20px, 5.1vw);
+  border: 1px solid black;
+  border-radius: 8px;
 `;
 
 const Input = styled.input`
-  border-radius: 5px;
+  border-radius: 8px;
   touch-action: none;
   border: none;
-  padding: 30px 10px 10px;
+  padding: 25px 10px 10px;
   font-size: 18px;
   background: white;
   width: 100%;
-
+  
   &:focus {
     outline: none;
   }
@@ -52,14 +62,24 @@ const Input = styled.input`
   @media screen and (min-height: 750px) {
     font-size: 23px;
   }
+
+  @media screen and (max-height: 600px) {
+    padding-top: 18px;
+    font-size: 15px;
+  }
 `;
 
 const InputLabel = styled(RegularText)`
   position: absolute;
   top: 8px;
-  lefT: 10px;
+  left: 10px;
   font-size: 11px;
   color: #797E8B;
+  
+  @media screen and (max-height: 600px) {
+    top: 5px;
+    font-size: 10px;
+  }
 `;
 
 const RadioIconStyled = styled.div`
@@ -67,7 +87,7 @@ const RadioIconStyled = styled.div`
   flex-shrink: 0;
   width: 16px;
   height: 16px;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 3px;
   margin-right: min(10px, 2.6vw);
 
@@ -134,7 +154,7 @@ const ButtonStyled = styled(Button)`
 `;
 
 const SendBlock = styled(FlexWrapper)`
-  margin-top: min(69px, 16.5vw);
+  margin-top: min(50px, 12.5vw);
   align-items: center;
   justify-content: center;
 `;
@@ -196,7 +216,7 @@ export const LastModal = ({onNext}) => {
                 'Работа в QIWI тебе точно будет по вкусу. Будь в курсе ' +
                 'новостей и свежих анонсов — переходи в канал QIWI INSIDE!' +
                 '\nВсе актуальные вакансии есть на нашем карьерном портале, ' +
-                'ищи его в закрепе. Построй карьеру в динамичном финтехе!'
+                'ищи его в закрепе. Построй карьеру\nв динамичном финтехе!'
             }
             btnText={'Заглянуть к QIWI'}
             icon={icon}
@@ -205,7 +225,7 @@ export const LastModal = ({onNext}) => {
             {isSend ? (
                 <SendBlock>
                     <Icon/>
-                    <SendText>ОТПРАВЛЕНО</SendText>
+                    <SendText>ОТПРАВЛЕНО!</SendText>
                 </SendBlock>
             ) : (
                 <Form>

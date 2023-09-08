@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   height: var(--cardSize);
   background-color: ${({$bgColor}) => $bgColor ?? colors.orange};
   border-radius: var(--cardBorder);
+  border: 1px solid ${({$bgColor}) => $bgColor ? '#FFFFFF' : '#000000'};
   cursor: ${({$isDraggable}) => $isDraggable ? 'grab' : 'auto'};
 `;
 
@@ -35,6 +36,7 @@ const PointWrapper = styled.div`
   border-radius: var(--smallRadius);
   background: ${colors.purple};
   left: 50%;
+  color: #FFFFFF;
   transform: translateX(-50%);
 `;
 

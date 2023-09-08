@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { FlexWrapper } from './FlexWrapper';
 
-const Wrapper = styled.div`
+const Wrapper = styled(FlexWrapper)`
   position: absolute;
   z-index: 99;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: #FFFFFF;
 `;
 
 export const ModalWrapper = (props) => <Wrapper {...props}/>

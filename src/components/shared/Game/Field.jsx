@@ -7,20 +7,15 @@ import { rulesCardBottom, rulesCardUpper } from './game-constants';
 
 const Wrapper = styled(FlexWrapper)`
   position: relative;
-  --gridColumnGap: calc((100% - 4 * var(--cardSize)) / 3);
+  --gridColumnGap: calc((100% - 4 * var(--cardSize)) / 5);
   --gridGap: min(6px, 1.6vw);
   --gridPadding: 4px;
   background: ${({$color}) => $color};
-  border: 2px solid ${({$color}) => $color};
+  border: 1px solid #000000;
   border-radius: calc(var(--cardSize) * 20 / 80);
   width: 100%;
   margin: 0 auto;
-  background: #1C1C1C;
   z-index: ${({$isOnTop}) => $isOnTop ? 100 : 1};
-  
-  @media screen and (max-height: 800px) and (min-width: 330px) {
-    --gridPadding: min(2.5vw, 15px);
-  }
 `;
 
 const CardsWrapper = styled.div`
@@ -34,18 +29,12 @@ const CardsWrapper = styled.div`
   grid-row-gap: var(--gridGap);
   padding: 
           ${({$isBottom}) => $isBottom ? 'var(--paddingAmount)' : 'var(--gridPadding)'} 
-          var(--gridPadding) 
+          var(--gridColumnGap) 
           ${({$isBottom}) => !$isBottom ? 'var(--paddingAmount)' : '0'} 
-          var(--gridPadding);
+          var(--gridColumnGap);
   flex-shrink: 0;
   width: 100%;
   min-height: calc(2 * var(--cardSize) + var(--gridGap) + 2 * var(--gridPadding) + var(--paddingAmount));
-  
-  @media screen and (max-height: 800px) and (min-width: 330px){
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
 `;
 
 const Amount = styled.div`
@@ -57,9 +46,10 @@ const Amount = styled.div`
   font-size: calc(var(--cardSize) * 36 / 80);
   line-height: 100%;
   vertical-align: middle;
+  color: #FFFFFF;
 `;
 
-export const Field = ({ cards, maxCards, onCardDrop, color, isNotDrop, points, isOnTop, fieldRef, isBottom, isRules }) => {
+export const Field = ({ cards, className, onCardDrop, color, isNotDrop, points, isOnTop, fieldRef, isBottom, isRules }) => {
     const [{}, drop] = useDrop(() => ({
         accept: 'CARD',
         collect: monitor => ({
@@ -73,6 +63,7 @@ export const Field = ({ cards, maxCards, onCardDrop, color, isNotDrop, points, i
     const rulesCards = isBottom ? rulesCardBottom : rulesCardUpper;
     return (
         <Wrapper
+            className={className}
             ref={isNotDrop ? fieldRef : mergeRefs([drop, fieldRef])}
             $color={color}
             $isOnTop={isOnTop}
@@ -83,14 +74,14 @@ export const Field = ({ cards, maxCards, onCardDrop, color, isNotDrop, points, i
                         {rulesCards.map(card => (
                             <Card key={card.id} card={card} color={color} isNotDraggable/>
                         ))}
-                        <Amount $color={color} $isBottom={isBottom}>5</Amount>
+                        <Amount $isBottom={isBottom}>5</Amount>
                     </>
                 ) : (
                     <>
                         {cards.map(card => (
                             <Card key={card.id} card={card} color={color} isNotDraggable={isNotDrop}/>
                         ))}
-                        <Amount $color={color} $isBottom={isBottom}>{points}</Amount>
+                        <Amount $isBottom={isBottom}>{points}</Amount>
                     </>
                 )}
             </CardsWrapper>

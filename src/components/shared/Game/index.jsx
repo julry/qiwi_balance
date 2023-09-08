@@ -5,6 +5,7 @@ import { TouchBackend } from 'react-dnd-touch-backend';
 import { MouseTransition, TouchTransition, DndProvider } from 'react-dnd-multi-backend';
 import refresh from '../../../assets/images/refresh.svg';
 import ask from '../../../assets/images/askSign.svg';
+import levelBg from '../../../assets/images/levelBg.svg';
 import errorIcon from '../../../assets/images/errorFace.svg';
 import { FlexWrapper } from '../FlexWrapper';
 import { Modal } from '../Modal';
@@ -14,7 +15,6 @@ import { CardsPlace } from './CardsPlace';
 import { RulesModal } from './RulesModal';
 import { CardInfo } from './CardInfo';
 import { DoneModal } from './DoneModal';
-import { rulesCards } from './game-constants';
 
 const FIELDS = {
     upperField: 'upperField',
@@ -26,7 +26,6 @@ const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   padding: min(44px, 11.7vw) min(20px, 5.1vw);
-  background: #1C1C1C;
  
   @media screen and (max-height: 700px){
     padding-top: min(30px, 8vw);
@@ -53,9 +52,9 @@ const ButtonsBlock = styled.div`
 
 const ButtonStyled = styled.button`
   outline: none;
-  border: 2px solid white;
-  width: calc(var(--cardSize) * 43 / 80);
-  height: calc(var(--cardSize) * 43 / 80);
+  border: 2px solid black;
+  width: 47px;
+  height: 47px;
   background-repeat: no-repeat;
   background-position: center center;
   background-color: transparent;
@@ -75,13 +74,17 @@ const RulesButton = styled(ButtonStyled)`
 const LevelInfo = styled.div`
   display: flex;
   align-items: center;
-  --fontSize: calc(var(--cardSize) * 24 / 80);
+  --fontSize: calc(var(--cardSize) * 20 / 80);
   font-family: 'QiwiPixel', sans-serif;
   font-size: max(18px, var(--fontSize));
   line-height: 24px;
   font-weight: bold;
-  height: calc(var(--cardSize) * 43 / 80);
+  height: 47px;
+  width: 136px;
+  justify-content: center;
   border-radius: 12px;
+  background: url(${levelBg}) no-repeat 0 0 /cover;
+  padding: 5px 8px 10px 10px;
 `;
 
 const IncorrectModal = styled(Modal)`
@@ -90,7 +93,6 @@ const IncorrectModal = styled(Modal)`
 
 export const Game = ({ cards, isFirstTime, level, onNext }) => {
     const [isRules, setIsRules] = useState(isFirstTime);
-    const [top, setTop] = useState();
     const [rulesStage, setRulesStage] = useState(0);
     const [fieldCards, setFieldCards] = useState({
         [FIELDS.upperField]: [],
@@ -208,28 +210,6 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
         }, 300);
     }, [points, shownCards]);
 
-    useEffect(() => {
-        let topValue;
-        if (isRules) {
-            const bottomY = bottomFieldRef?.current.offsetTop;
-            const topY = upperFieldRef?.current.offsetTop;
-            const topH = upperFieldRef?.current.clientHeight;
-            const placeH = placeRef?.current.clientHeight;
-            switch (rulesStage) {
-                case 0:
-                    topValue = blockRef?.current.offsetTop + blockRef?.current.clientHeight + 10;
-                    break;
-                case 1:
-                    const distance = (bottomY - topH - topY - placeH) / 2;
-                    topValue = topH + topY + distance;
-                    break;
-                default:
-                    topValue = 0;
-                    break;
-            }
-        }
-        setTop(topValue);
-    }, [isRules, rulesStage]);
 
     const handleNextRule = () => {
         if (rulesStage === 2) {
@@ -262,48 +242,32 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                         maxCards={cards.length}
                         onCardDrop={handleUpperFieldDrop}
                         points={points[FIELDS.upperField]}
-                        isNotDrop={isRules || isCorrect}
+                        isNotDrop={isCorrect}
                         color={'#45B3E9'}
-                        isOnTop={isRules && rulesStage === 1}
-                        isRules={isRules}
                     />
                     <CardsPlace
                         onCardDrop={handleReturnCard}
-                        isNotDrop={isRules || isCorrect}
-                        isOnTop={isRules && rulesStage === 0}
+                        isNotDrop={isCorrect}
                         placeRef={placeRef}
                         maxCards={cards.length}
                     >
-                        {isRules ? (
-                            <>
-                                {rulesCards.map(card => (
-                                    <Card
-                                        key={card.id}
-                                        card={card}
-                                        isNotDraggable
-                                        isShowPoints
-                                    />
-                                ))}
-                            </>
-                        ): (
-                            <>
-                                {shownCards.map(card => (
-                                    <Card
-                                        key={card.id}
-                                        card={card}
-                                        isNotDraggable={isRules || isCorrect}
-                                        onClick={() => isRules? {} : setCardInfo({shown: true, card: card})}
-                                        isShowPoints
-                                    />
-                                ))}
-                                {cardInfo.shown && (
-                                    <CardInfo
-                                        card={cardInfo.card}
-                                        onClose={() => setCardInfo({shown: false, card: {}})}
-                                    />
-                                )}
-                            </>
-                        )}
+                        <>
+                            {shownCards.map(card => (
+                                <Card
+                                    key={card.id}
+                                    card={card}
+                                    isNotDraggable={isRules || isCorrect}
+                                    onClick={() => isRules? {} : setCardInfo({shown: true, card: card})}
+                                    isShowPoints
+                                />
+                            ))}
+                            {cardInfo.shown && (
+                                <CardInfo
+                                    card={cardInfo.card}
+                                    onClose={() => setCardInfo({shown: false, card: {}})}
+                                />
+                            )}
+                        </>
                         {isCorrect && (
                             <DoneModal onNext={onNext}/>
                         )}
@@ -317,17 +281,15 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                         points={points[FIELDS.bottomField]}
                         isNotDrop={isRules || isCorrect}
                         color={'#E94969'}
-                        isOnTop={isRules && rulesStage === 1}
                         isRules={isRules}
                         isBottom
                     />
+                    {isRules && <RulesModal
+                        onNext={handleNextRule}
+                        rulesStage={rulesStage}
+                        onPrev={handlePrevRule}
+                    />}
                 </DndProvider>
-                {isRules && <RulesModal
-                    onNext={handleNextRule}
-                    rulesStage={rulesStage}
-                    onPrev={handlePrevRule}
-                    top={top}
-                />}
                 {isIncorrect && (
                     <IncorrectModal
                         text={
@@ -335,7 +297,7 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                             '\n' +
                             'Попробуй другую комбинацию, чтобы по итогу получить баланс.'
                         }
-                        btnText={'Продолжить'}
+                        btnText={'Заново'}
                         icon={errorIcon}
                         onClick={handleRestart}
                     />
