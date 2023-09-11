@@ -35,7 +35,7 @@ const ButtonsBlock = styled.div`
 `;
 
 const ButtonRight = styled(Button)`
-  padding-top: calc(var(--cardSize) * 19 / 80);
+  padding-top:  ${({$isLast}) => $isLast ? 'calc(var(--cardSize) * 17 / 80)' : 'calc(var(--cardSize) * 19 / 80)'};
   width: ${({$isLast}) => $isLast ? 'calc(var(--cardSize) * 133 / 80)' : 'calc(var(--cardSize) * 48 / 80)'};
 `;
 
@@ -76,7 +76,7 @@ export const RulesModal = ({ rulesStage, onNext, onPrev, top }) => {
         case 2:
             Component = Stage3Content;
             title = 'ПОРА ЗА ДЕЛО!';
-            text = 'У тебя будет 5 уровней \nс растущим количеством дел \nи сложностью. \n' +
+            text = 'У тебя будет 5 уровней \nс растущим количеством дел \nи разной сложности. \n' +
                 '\n' +
                 'У тебя всё получится!'
             break;

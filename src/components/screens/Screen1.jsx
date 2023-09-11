@@ -74,8 +74,7 @@ const Light = styled(Icon)`
 
 const TextWrapper = styled.div`
   position: relative;
-  width: calc(var(--cardSize) * 370 / 80);
-  max-width: 370px;
+  width: calc(var(--cardSize) * 380 / 80);
   padding: min(20px, 5.1vw) min(20px, 5.1vw) min(44px, 11.29vw);
   background: white;
   margin: 0 auto;
@@ -86,6 +85,8 @@ const TextWrapper = styled.div`
 `;
 
 const Title = styled(BoldText)`
+  position: relative;
+  z-index: 4;
   font-size: 40px;
   margin: min(140px, 30.2vw) auto min(20px, 5.1vw);
   text-align: center;
@@ -105,7 +106,7 @@ const MovedButtonStyled = styled(MovedButton)`
   background: black;
   font-weight: 400;
   font-size: 32px;
-  padding: 4px 15px 6px;
+  padding: 6px 15px 6px;
   min-height: 44px;
   bottom: -22px;
 `;
@@ -124,7 +125,7 @@ export const Screen1 = () => {
             <TextWrapper>
                 <Light />
                 <CommonText>
-                    Учёба, работа и личная жизнь
+                    Учёба, работа и личная жизнь{'\n'}
                     заставляют тебя разрываться? {'\n'} Или ты только готовишься начать карьеру и со страхом
                     представляешь этих трёх всадников вместе?
                 </CommonText>
