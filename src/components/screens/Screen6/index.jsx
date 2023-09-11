@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { useProgress } from '../../../hooks/useProgress';
 import { LastModal } from '../../shared/LastModal';
 import { Game } from '../../shared/Game';
 import { icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8 } from './icons';
+import { openTg } from '../../../utils/openTg';
 
 export const Screen6 = () => {
     const [isLastModal, setIsLastModal] = useState(false);
-    const {next} = useProgress();
 
     const cards = [
         {
@@ -70,7 +69,7 @@ export const Screen6 = () => {
     return (
         <>
             <Game cards={cards} level={5} onNext={() => setIsLastModal(true)}/>
-            {isLastModal && <LastModal onNext={next}/>}
+            {isLastModal && <LastModal onNext={openTg}/>}
         </>
     )
 

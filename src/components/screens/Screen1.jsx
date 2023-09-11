@@ -74,7 +74,7 @@ const Light = styled(Icon)`
 
 const TextWrapper = styled.div`
   position: relative;
-  width: calc(100% - 20px);
+  width: calc(var(--cardSize) * 370 / 80);
   max-width: 370px;
   padding: min(20px, 5.1vw) min(20px, 5.1vw) min(44px, 11.29vw);
   background: white;
@@ -115,7 +115,7 @@ export const Screen1 = () => {
 
     return (
         <Wrapper>
-            <Title>Влетай в режим баланса!</Title>
+            <Title>Влетай в режим{'\n'}баланса!</Title>
             <Star />
             <Ball />
             <Fire />
@@ -124,8 +124,8 @@ export const Screen1 = () => {
             <TextWrapper>
                 <Light />
                 <CommonText>
-                    Учёба, работа и личная жизнь {'\n'}
-                    заставляют тебя разрываться? Или ты только готовишься начать карьеру и со страхом
+                    Учёба, работа и личная жизнь
+                    заставляют тебя разрываться? {'\n'} Или ты только готовишься начать карьеру и со страхом
                     представляешь этих трёх всадников вместе?
                 </CommonText>
                 <br/>

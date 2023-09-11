@@ -41,6 +41,14 @@ const Icon = styled.div`
   }
 `;
 
+const ButtonStyled = styled(Button)`
+  background: #FFFFFF;
+  color: #000000;
+  height: calc(var(--cardSize) * 44 / 80);
+  font-weight: 400;
+  padding-top: calc(var(--cardSize) * 9 / 80);
+`;
+
 export const DoneModal = ({onNext}) => (
     <Wrapper>
         <Info>
@@ -49,6 +57,6 @@ export const DoneModal = ({onNext}) => (
                 {'Молодец — \nвсё верно!'}
             </CommonText>
         </Info>
-        <Button onClick={onNext}>Идти дальше</Button>
+        <ButtonStyled onClick={onNext}>Идти дальше</ButtonStyled>
     </Wrapper>
 )

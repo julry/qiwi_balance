@@ -2,6 +2,7 @@ import tgIcon from '../../assets/images/winkFace.svg';
 import styled from 'styled-components';
 import { Modal } from './Modal';
 import { CommonText } from './styledTexts';
+import { openTg } from '../../utils/openTg';
 
 const ModalWrapper = styled(Modal)`
   padding-top: min(125px, 32vw);
@@ -30,6 +31,6 @@ export const TgModal = ({onNext}) => (
         icon={tgIcon}
         onClick={onNext}
     >
-        <Link>Заглянуть к QIWI</Link>
+        <Link onClick={openTg}>Заглянуть к QIWI</Link>
     </ModalWrapper>
 )
