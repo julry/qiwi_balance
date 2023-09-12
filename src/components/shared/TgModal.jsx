@@ -29,7 +29,7 @@ export const TgModal = ({onNext}) => (
         }
         btnText={'Продолжить игру'}
         icon={tgIcon}
-        onClick={onNext}
+        onNext={onNext}
     >
         <Link onClick={openTg}>Заглянуть к QIWI</Link>
     </ModalWrapper>

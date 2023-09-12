@@ -14,6 +14,10 @@ const Wrapper = styled(ModalWrapper)`
   @media screen and (max-height: 700px){
     padding-top: min(20px, 5vw);
   }
+  
+  @media screen and (max-height: 600px) {
+    grid-template-rows: auto min(55vh, 101vw) auto calc(60 * calc(var(--cardSize) * 5) / 80);
+  }
 `;
 
 export const Title = styled(BoldText)`
@@ -37,12 +41,20 @@ const ButtonsBlock = styled.div`
 const ButtonRight = styled(Button)`
   padding-top:  ${({$isLast}) => $isLast ? 'calc(var(--cardSize) * 17 / 80)' : 'calc(var(--cardSize) * 19 / 80)'};
   width: ${({$isLast}) => $isLast ? 'calc(var(--cardSize) * 133 / 80)' : 'calc(var(--cardSize) * 48 / 80)'};
+
+  @media screen and (max-height: 600px) {
+    padding-top: calc(var(--cardSize) * 15 / 80);
+  }
 `;
 
 const ButtonLeft = styled(Button)`
   padding-top: calc(var(--cardSize) * 19 / 80);
   width: calc(var(--cardSize) * 48 / 80);
   opacity: ${({$isInvisible}) => $isInvisible ? 0 : 1};
+
+  @media screen and (max-height: 600px) {
+    padding-top: calc(var(--cardSize) * 15 / 80);
+  }
 `;
 
 const TextWrapper = styled.div`

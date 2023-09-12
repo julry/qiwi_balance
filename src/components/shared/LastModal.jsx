@@ -220,7 +220,7 @@ export const LastModal = ({onNext}) => {
             }
             btnText={'Заглянуть к QIWI'}
             icon={icon}
-            onClick={onNext}
+            onNext={onNext}
         >
             {isSend ? (
                 <SendBlock>
