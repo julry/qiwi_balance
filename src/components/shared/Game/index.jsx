@@ -59,6 +59,11 @@ const ButtonStyled = styled.button`
   background-position: center center;
   background-color: transparent;
   border-radius: var(--smallRadius);
+
+  @media screen and (max-height: 600px){
+    width: 29px;
+    height: 29px;
+  }
 `;
 
 const RefreshButton = styled(ButtonStyled)`
@@ -85,6 +90,12 @@ const LevelInfo = styled.div`
   border-radius: 12px;
   background: url(${levelBg}) no-repeat 0 0 /cover;
   padding: 5px 8px 10px 10px;
+
+  @media screen and (max-height: 600px){
+    width: 84px;
+    height: 29px;
+    font-size: 12px;
+  }
 `;
 
 const IncorrectModal = styled(Modal)`

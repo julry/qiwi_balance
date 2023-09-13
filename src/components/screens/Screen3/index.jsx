@@ -1,9 +1,15 @@
+import { useState } from 'react';
 import { useProgress } from '../../../hooks/useProgress';
+import { openTg } from '../../../utils/openTg';
 import { Game } from '../../shared/Game';
+import { TgModal } from '../../shared/TgModal';
+import { Link } from '../../shared/Link';
 import { icon1, icon2, icon3, icon4, icon5 } from './icons';
 
 export const Screen3 = () => {
     const {next} = useProgress();
+    const [isTgModal, setIsTgModal] = useState(false);
+
     const cards = [
         {
             id: 0,
@@ -42,5 +48,25 @@ export const Screen3 = () => {
         },
     ];
 
-    return <Game cards={cards} level={2} onNext={next}/>
+    const text = () => <>
+        {
+            'Ты круто справляешься, айтишники всех ' +
+            'отделов QIWI уже хотят тебя к себе в команду! \n' +
+            '\n' +
+            'Загляни в tg-канал'}
+        <Link onClick={openTg}> QIWI INSIDE</Link>
+        {
+            ', чтобы разузнать все секреты ' +
+            'об ИТ-карьере и ощутить себя сотрудником компании.\n' +
+            '\n' +
+            'Или сделай это позже, а сейчас иди до победного — реши все уравнения!'
+        }
+    </>
+
+    return (
+        <>
+            <Game cards={cards} level={2} onNext={() => setIsTgModal(true)}/>
+            {isTgModal && <TgModal onNext={next} text={text}/>}
+        </>
+    )
 }

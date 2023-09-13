@@ -31,7 +31,7 @@ export const Modal = ({icon, text, onNext, btnText, children, ...restProps}) => 
     <ModalWrapper {...restProps}>
         <Rectangle>
             <Icon $icon={icon}/>
-            <CommonText>{text}</CommonText>
+            <CommonText>{typeof text === 'function' ? text?.() : text}</CommonText>
         </Rectangle>
         <ButtonStyled onClick={onNext}>{btnText}</ButtonStyled>
         {children}

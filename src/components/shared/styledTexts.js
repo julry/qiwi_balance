@@ -14,4 +14,8 @@ export const BoldText = styled.p`
 
 export const CommonText = styled(MediumText)`
   font-size: calc(var(--cardSize) * 20 / 80);
+
+  @media screen and (max-height: 600px) {
+    font-size: 12px;
+  }
 `;

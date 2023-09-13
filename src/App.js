@@ -44,7 +44,7 @@ const ComponentWrapper = styled(FlexWrapper)`
 
   @media screen and (min-width: 640px) {
     max-width: 500px;
-    border: 3px solid white;
+    border: 3px solid black;
     border-radius: 20px;
   }
 `;

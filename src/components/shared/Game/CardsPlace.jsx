@@ -25,6 +25,10 @@ const Wrapper = styled.div`
   @media screen and (min-height: 1000px){
     --gridGap: min(25px, 5.1vw);
   }
+
+  @media screen and (max-height: 600px){
+    margin: min(10px, 2.5vw) auto;
+  }
 `;
 
 export const CardsPlace = ({ className, onCardDrop, isNotDrop, children, placeRef, isOnTop, maxCards }) => {

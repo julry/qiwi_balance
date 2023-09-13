@@ -28,7 +28,11 @@ const Ball = styled(Icon)`
   top: min(45px, 5.3%);
   left: min(54px, 13.8vw);
   height: min(40px, 10.2vw);
-  width: min(40px, 10.2vw)
+  width: min(40px, 10.2vw);
+  
+  @media screen and (min-width: 640px) and (max-height: 700px) {
+    top: 3.9%;
+  }
 `;
 
 const Heart = styled(Icon)`
@@ -44,7 +48,11 @@ const Fire = styled(Icon)`
   bottom: min(83px, 9.8%);
   left: min(45px, 11.53vw);
   height: min(50px, 12.8vw);
-  width: min(39px, 10vw)
+  width: min(39px, 10vw);
+
+  @media screen and (min-width: 640px) and (max-height: 700px) {
+    bottom: 7.2%;
+  }
 `;
 
 const Star = styled(Icon)`
@@ -52,15 +60,23 @@ const Star = styled(Icon)`
   top: min(67px, 7.9%);
   right: min(127px, 32.5vw);
   height: min(40px, 10.2vw);
-  width: min(43px, 11.02vw)
+  width: min(43px, 11.02vw);
+
+  @media screen and (min-width: 640px) and (max-height: 700px) {
+    top: 5.9%;
+  }
 `;
 
 const Sticker = styled(Icon)`
   background-image: url(${sticker});
-  bottom: min(28px, 7.1%);
+  bottom: max(28px, 7.1%);
   right: min(53px, 13.5vw);
   height: min(56px, 14.3vw);
-  width: min(200px, 51vw)
+  width: min(200px, 51vw);
+
+  @media screen and (min-width: 640px) and (max-height: 700px) {
+    bottom: 10px;
+  }
 `;
 
 const Light = styled(Icon)`
@@ -82,6 +98,10 @@ const TextWrapper = styled.div`
   color: black;
   border-radius: var(--borderRadius);
   z-index: 3;
+  
+  @media screen and (min-width: 640px) and (max-height: 600px) {
+    width: calc(var(--cardSize) * 420 / 80);
+  }
 `;
 
 const Title = styled(BoldText)`
@@ -99,6 +119,11 @@ const Title = styled(BoldText)`
   
   @media screen and (max-width: 320px) {
     font-size: 30px;
+  }
+  
+  @media screen and (min-width: 640px) and (max-height: 700px) {
+    font-size: 30px;
+    margin-top: calc(5.9% + 50px);
   }
 `;
 

@@ -1,12 +1,8 @@
-import { useState } from 'react';
 import { useProgress } from '../../../hooks/useProgress';
-import { TgModal } from '../../shared/TgModal';
 import { Game } from '../../shared/Game';
 import { icon1, icon2, icon3, icon4, icon5, icon6 } from './icons';
 
 export const Screen4 = () => {
-    const [isTgModal, setIsTgModal] = useState(false);
-
     const {next} = useProgress();
 
     const cards = [
@@ -54,10 +50,5 @@ export const Screen4 = () => {
         },
     ];
 
-    return (
-        <>
-            <Game cards={cards} level={3} onNext={() => setIsTgModal(true)}/>
-            {isTgModal && <TgModal onNext={next} />}
-        </>
-    )
-}
+    return <Game cards={cards} level={3} onNext={next}/>
+};

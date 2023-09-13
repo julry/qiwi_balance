@@ -11,6 +11,7 @@ const Wrapper = styled(ModalWrapper)`
   grid-template-rows: auto min(50vh, 101vw) auto calc(60 * calc(var(--cardSize) * 5) / 80);
   padding: min(44px, 11.7vw) 20px;
   color: #000000;
+  
   @media screen and (max-height: 700px){
     padding-top: min(20px, 5vw);
   }
@@ -29,6 +30,10 @@ export const Title = styled(BoldText)`
   @media screen and (max-height: 700px) {
     font-size: 23px;
   }
+
+  @media screen and (max-height: 600px) {
+    font-size: 20px;
+  }
 `;
 
 const ButtonsBlock = styled.div`
@@ -36,6 +41,10 @@ const ButtonsBlock = styled.div`
   justify-content: space-between;
   width: 100%;
   padding-top: min(20px, 5.1vw);
+
+  @media screen and (max-height: 600px) {
+    padding-top: min(5px, 1.5vw);
+  }
 `;
 
 const ButtonRight = styled(Button)`
