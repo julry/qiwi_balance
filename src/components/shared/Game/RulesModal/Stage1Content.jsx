@@ -25,6 +25,10 @@ const FieldStyled = styled(Field)`
   @media screen and (max-width: 310px) {
     width: 230px;
   }
+
+  @media screen and (max-height: 600px) {
+    height: 87px;
+  }
   
   &:first-child {
     margin-bottom: 160px;
@@ -34,11 +38,11 @@ const FieldStyled = styled(Field)`
     }
 
     @media screen and (max-height: 700px){
-      margin-bottom: 115px;
+      margin-bottom: 105px;
     }
 
     @media screen and (max-height: 600px){
-      margin-bottom: 90px;
+      margin-bottom: 70px;
     }
 
     @media screen and (min-height: 1000px){
@@ -64,11 +68,13 @@ const CardsPlaceStyled = styled(CardsPlace)`
   }
 
   @media screen and (max-height: 700px){
-    height: 160px;
+    height: 155px;
   }
 
   @media screen and (max-height: 600px){
-    height: 135px;
+    height: 115px;
+    top: 70px;
+    --cardSize: 45px;
   }
 
   @media screen and (min-height: 1000px){

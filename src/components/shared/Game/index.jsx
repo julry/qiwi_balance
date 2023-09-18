@@ -90,11 +90,12 @@ const LevelInfo = styled.div`
   border-radius: 12px;
   background: url(${levelBg}) no-repeat 0 0 /cover;
   padding: 5px 8px 10px 10px;
+  min-width: max-content;
 
   @media screen and (max-height: 600px){
     width: 84px;
     height: 29px;
-    font-size: 12px;
+    font-size: 11px;
   }
 `;
 
