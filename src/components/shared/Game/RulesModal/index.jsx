@@ -17,7 +17,7 @@ const Wrapper = styled(ModalWrapper)`
   }
   
   @media screen and (max-height: 600px) {
-    grid-template-rows: auto min(55vh, 101vw) auto calc(60 * calc(var(--cardSize) * 5) / 80);
+    grid-template-rows: auto minmax(calc(390 * var(--cardSize) / 80), 50%) auto calc(60 * calc(var(--cardSize) * 3) / 80);
   }
 `;
 

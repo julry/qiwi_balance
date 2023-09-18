@@ -65,8 +65,8 @@ export const Screen5 = () => {
         {
             'Вау, у тебя точно настрой на победу! \n' +
             '\n' +
-            'Загляни в tg-канал'}
-        <Link onClick={openTg}> QIWI INSIDE</Link>
+            'Загляни в tg-канал '}
+        <Link onClick={openTg}>QIWI INSIDE</Link>
         {
             ', чтобы разузнать все секреты ' +
             'об ИТ-карьере и ощутить себя сотрудником компании.\n' +

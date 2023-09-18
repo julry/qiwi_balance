@@ -9,11 +9,12 @@ const ButtonStyled = styled.button`
   border-radius: 8px;
   font-size: max(var(--fontSize), 18px);
   font-weight: 700;
-  padding: calc(var(--cardSize) * 15 / 80) calc(var(--cardSize) * 23 / 80) calc(var(--cardSize) * 23 / 80);
+  padding: calc(var(--cardSize) * 17 / 80) calc(var(--cardSize) * 23 / 80) calc(var(--cardSize) * 23 / 80);
   height: calc(var(--cardSize) * 60 / 80);
   min-height: 30px;
   color: white;
   min-width: max-content;
+  flex-shrink: 0;
 `;
 
 const MovedButtonStyled = styled(ButtonStyled)`

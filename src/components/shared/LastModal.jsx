@@ -14,12 +14,13 @@ const ModalWrapper = styled(Modal)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   
-  & div:first-child {
-    max-width: calc(var(--cardSize) * 346 / 80);
+  & > div:first-child {
+    width: calc(var(--cardSize) * 346 / 80);
     padding: calc(var(--cardSize) * 20 / 80) calc(var(--cardSize) * 20 / 80)
             calc(var(--cardSize) * 20 / 80 + 22px) calc(var(--cardSize) * 20 / 80);
-
+    
     @media screen and (max-height: 600px) {
       max-width: 90vw;
     }

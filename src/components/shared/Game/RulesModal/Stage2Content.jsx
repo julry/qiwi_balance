@@ -30,9 +30,9 @@ const FieldStyled = styled(Field)`
   }
   
   @media screen and (max-height: 600px) {
-    width: calc(var(--fieldWidth) * 600 / 900);
-    height: calc(var(--fieldHeight) * 600 / 900);
-    --cardSize: 45px;
+    width: calc(var(--fieldWidth) * 500 / 900);
+    height: calc(var(--fieldHeight) * 500 / 900);
+    --cardSize: 35px;
   }
 
   @media screen and (max-width: 310px) {
@@ -55,7 +55,7 @@ const FieldStyled = styled(Field)`
     }
     
     @media screen and (max-height: 600px) {
-      top: ${({$isTop}) => $isTop ? 'calc(100% - 50px)' : '5px'};
+      top: ${({$isTop}) => $isTop ? 'calc(100% - 25px)' : '5px'};
     }
   }
 
