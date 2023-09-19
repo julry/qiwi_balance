@@ -26,7 +26,7 @@ const Wrapper = styled(FlexWrapper)`
 
   @media screen and (max-height: 600px){
     --cardBorder: 10px;
-    --cardSize: min(55px, 16vw);
+    --cardSize: min(50px, 14vw);
   }
 
   @media screen and (min-height: 1000px){

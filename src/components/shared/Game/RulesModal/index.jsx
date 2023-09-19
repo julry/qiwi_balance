@@ -17,7 +17,7 @@ const Wrapper = styled(ModalWrapper)`
   }
 
   @media screen and (max-height: 600px) {
-    grid-template-rows: auto minmax(calc(390 * var(--cardSize) / 80), 50%) auto calc(60 * calc(var(--cardSize) * 3) / 80);
+    grid-template-rows: auto minmax(calc(390 * var(--cardSize) / 80), 60%) auto calc(60 * calc(var(--cardSize) * 3) / 80);
   }
 
   @media screen and (max-width: 315px) {
@@ -26,6 +26,10 @@ const Wrapper = styled(ModalWrapper)`
 
   @media screen and (min-height: 900px) {
     grid-template-rows: auto minmax(calc(390 * var(--cardSize) / 80), 50%) auto calc(60 * calc(var(--cardSize) * 3) / 80);
+  }
+
+  @media screen and (max-height: 500px) {
+    grid-template-rows: auto minmax(calc(410 * var(--cardSize) / 80), 75%) auto calc(60 * calc(var(--cardSize) * 3) / 80);
   }
 `;
 

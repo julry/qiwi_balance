@@ -33,6 +33,10 @@ const Ball = styled(Icon)`
   @media screen and (min-width: 640px) and (max-height: 700px) {
     top: 3.9%;
   }
+
+  @media screen and (max-height: 500px) {
+    top: min(20px, 2.3%);
+  }
 `;
 
 const Heart = styled(Icon)`
@@ -40,7 +44,11 @@ const Heart = styled(Icon)`
   bottom: min(133px, 15.6%);
   right: min(63px, 7.4vw);
   height: min(40px, 10.2vw);
-  width: min(45px, 11.53vw)
+  width: min(45px, 11.53vw);
+
+  @media screen and (max-height: 800px) {
+    bottom: min(123px, 13.6%);
+  }
 `;
 
 const Fire = styled(Icon)`
@@ -52,6 +60,10 @@ const Fire = styled(Icon)`
 
   @media screen and (min-width: 640px) and (max-height: 700px) {
     bottom: 7.2%;
+  }
+
+  @media screen and (max-height: 800px) {
+    bottom: min(73px, 7.2%);
   }
 `;
 
@@ -65,6 +77,10 @@ const Star = styled(Icon)`
   @media screen and (min-width: 640px) and (max-height: 700px) {
     top: 5.9%;
   }
+
+  @media screen and (max-height: 500px) {
+    top: min(40px, 5.3%);
+  }
 `;
 
 const Sticker = styled(Icon)`
@@ -76,6 +92,10 @@ const Sticker = styled(Icon)`
 
   @media screen and (min-width: 640px) and (max-height: 700px) {
     bottom: 10px;
+  }
+  
+  @media screen and (max-height: 800px) {
+    bottom: max(10px, 2.1%);
   }
 `;
 
@@ -102,6 +122,10 @@ const TextWrapper = styled.div`
   @media screen and (min-width: 640px) and (max-height: 600px) {
     width: calc(var(--cardSize) * 420 / 80);
   }
+
+  @media screen and (max-height: 500px) {
+    padding: min(15px, 3.5vw) min(15px, 3.5vw) min(30px, 8.29vw);
+  }
 `;
 
 const Title = styled(BoldText)`
@@ -115,6 +139,7 @@ const Title = styled(BoldText)`
 
   @media screen and (max-height: 700px) {
     font-size: 36px;
+    margin-top: min(100px, 25.5vw);
   }
   
   @media screen and (max-width: 320px) {
@@ -124,6 +149,11 @@ const Title = styled(BoldText)`
   @media screen and (min-width: 640px) and (max-height: 700px) {
     font-size: 30px;
     margin-top: calc(5.9% + 50px);
+  }
+
+  @media screen and (max-height: 500px) {
+    margin-top: min(80px, 20.5vw);
+    margin-bottom: min(10px, 4vw);
   }
 `;
 
