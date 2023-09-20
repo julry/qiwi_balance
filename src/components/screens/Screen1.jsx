@@ -34,8 +34,10 @@ const Ball = styled(Icon)`
     top: 3.9%;
   }
 
-  @media screen and (max-height: 500px) {
-    top: min(20px, 2.3%);
+  @media screen and (max-height: 600px) {
+    top: min(10px, 3.3%);
+    height: min(33px, 8.8vw);
+    width: min(33px, 8.8vw);
   }
 `;
 
@@ -78,8 +80,10 @@ const Star = styled(Icon)`
     top: 5.9%;
   }
 
-  @media screen and (max-height: 500px) {
-    top: min(40px, 5.3%);
+  @media screen and (max-height: 600px) {
+    top: min(15px, 5.3%);
+    height: min(30px, 8.1vw);
+    width: min(33px, 8.8vw);
   }
 `;
 
@@ -96,6 +100,12 @@ const Sticker = styled(Icon)`
   
   @media screen and (max-height: 800px) {
     bottom: max(10px, 2.1%);
+  }
+
+  @media screen and (max-height: 600px) {
+    height: min(30px, 12.5vw);
+    width: min(130px, 51vw);
+    right: 25vw;
   }
 `;
 
@@ -151,9 +161,10 @@ const Title = styled(BoldText)`
     margin-top: calc(5.9% + 50px);
   }
 
-  @media screen and (max-height: 500px) {
-    margin-top: min(80px, 20.5vw);
+  @media screen and (max-height: 600px) {
+    margin-top: min(50px, 15.5vw);
     margin-bottom: min(10px, 4vw);
+    font-size: 26px;
   }
 `;
 
@@ -161,9 +172,17 @@ const MovedButtonStyled = styled(MovedButton)`
   background: black;
   font-weight: 400;
   font-size: 32px;
-  padding: 6px 15px 6px;
+  padding: 6px 15px;
   min-height: 44px;
   bottom: -22px;
+
+  @media screen and (max-height: 600px) {
+    min-height: 35px;
+    height: 35px;
+    padding: 5px 15px 3px;
+    font-size: 25px;
+    bottom: -18px;
+  }
 `;
 
 export const Screen1 = () => {
