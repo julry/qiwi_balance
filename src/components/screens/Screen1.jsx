@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 import { useProgress } from '../../hooks/useProgress';
-import { colors } from '../shared/colors';
 import ball from '../../assets/images/ball.svg';
 import star from '../../assets/images/star.svg';
 import fire from '../../assets/images/fire.svg';
@@ -8,6 +8,7 @@ import heart from '../../assets/images/heart.svg';
 import light from '../../assets/images/light.svg';
 import sticker from '../../assets/images/sticker.svg';
 import { BoldText, CommonText } from '../shared/styledTexts';
+import { colors } from '../shared/colors';
 import { FlexWrapper } from '../shared/FlexWrapper';
 import { MovedButton } from '../shared/Button';
 
@@ -188,6 +189,11 @@ const MovedButtonStyled = styled(MovedButton)`
 export const Screen1 = () => {
     const { next } = useProgress();
 
+    const handleNext = () => {
+        reachMetrikaGoal('start');
+        next();
+    };
+
     return (
         <Wrapper>
             <Title>Влетай в режим{'\n'}баланса!</Title>
@@ -211,8 +217,8 @@ export const Screen1 = () => {
                 <CommonText>
                     Решай жизненные уравнения вместе {'\n'}с QIWI и повышай уровень своих скиллов ;)
                 </CommonText>
-                <MovedButtonStyled onClick={next}>В игру</MovedButtonStyled>
+                <MovedButtonStyled onClick={handleNext}>В игру</MovedButtonStyled>
             </TextWrapper>
         </Wrapper>
-    )
-}
+    );
+};

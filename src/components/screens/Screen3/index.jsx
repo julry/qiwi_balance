@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useProgress } from '../../../hooks/useProgress';
 import { openTg } from '../../../utils/openTg';
+import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
 import { Game } from '../../shared/Game';
 import { TgModal } from '../../shared/TgModal';
 import { Link } from '../../shared/Link';
@@ -9,6 +10,21 @@ import { icon1, icon2, icon3, icon4, icon5 } from './icons';
 export const Screen3 = () => {
     const {next} = useProgress();
     const [isTgModal, setIsTgModal] = useState(false);
+
+    const handleNext = () => {
+        reachMetrikaGoal('continue1');
+        next();
+    };
+
+    const handleFinish = () => {
+        reachMetrikaGoal('level2');
+        setIsTgModal(true);
+    };
+
+    const handleOpenTg = () => {
+        reachMetrikaGoal('click1');
+        openTg();
+    };
 
     const cards = [
         {
@@ -54,7 +70,7 @@ export const Screen3 = () => {
             'отделов QIWI уже хотят тебя к себе в команду! \n' +
             '\n' +
             'Загляни в tg-канал '}
-        <Link onClick={openTg}>QIWI INSIDE</Link>
+        <Link onClick={handleOpenTg}>QIWI INSIDE</Link>
         {
             ', чтобы разузнать все секреты ' +
             'об ИТ-карьере и ощутить себя сотрудником компании.\n' +
@@ -65,8 +81,8 @@ export const Screen3 = () => {
 
     return (
         <>
-            <Game cards={cards} level={2} onNext={() => setIsTgModal(true)}/>
-            {isTgModal && <TgModal onNext={next} text={text}/>}
+            <Game cards={cards} level={2} onNext={handleFinish}/>
+            {isTgModal && <TgModal onNext={handleNext} text={text}/>}
         </>
     )
 }

@@ -1,9 +1,16 @@
 import { useProgress } from '../../../hooks/useProgress';
+import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
 import { Game } from '../../shared/Game';
 import {icon1, icon2, icon3, icon4} from './icons';
 
 export const Screen2 = () => {
     const {next} = useProgress();
+
+    const handleNext = () => {
+        reachMetrikaGoal('level1');
+        next();
+    };
+
     const cards = [
         {
             id: 0,
@@ -35,5 +42,5 @@ export const Screen2 = () => {
         },
     ];
 
-    return <Game isFirstTime cards={cards} level={1} onNext={next}/>
+    return <Game isFirstTime cards={cards} level={1} onNext={handleNext}/>
 }

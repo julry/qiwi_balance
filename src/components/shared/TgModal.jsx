@@ -13,4 +13,4 @@ export const TgModal = ({onNext, text}) => (
         icon={tgIcon}
         onNext={onNext}
     />
-)
+);

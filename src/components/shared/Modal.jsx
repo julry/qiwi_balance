@@ -36,4 +36,4 @@ export const Modal = ({icon, text, onNext, btnText, children, ...restProps}) => 
         <ButtonStyled onClick={onNext}>{btnText}</ButtonStyled>
         {children}
     </ModalWrapper>
-)
+);

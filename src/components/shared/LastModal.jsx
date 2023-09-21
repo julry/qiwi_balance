@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { useIMask } from 'react-imask';
-import { BoldText, CommonText, RegularText } from './styledTexts';
-import { Modal } from './Modal';
-import { colors } from './colors';
+import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 import icon from '../../assets/images/laughFace.svg';
 import iconSend from '../../assets/images/heartFace.svg';
 import { Button } from './Button';
 import { FlexWrapper } from './FlexWrapper';
+import { BoldText, CommonText, RegularText } from './styledTexts';
+import { Modal } from './Modal';
+import { colors } from './colors';
 
 const ModalWrapper = styled(Modal)`
   display: flex;
@@ -189,8 +190,8 @@ export const LastModal = ({onNext}) => {
         setIsSend(true);
         setIsSending(true);
 
-        const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSetmicOtWgyjejzblWOgfiE79jQ90ffA67rM8FuyzoEkCgqxA/formResponse';
-        const PHONE_ID = 'entry.1975772535';
+        const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/u/1/d/e/1FAIpQLScVK5MZ_CmKJjZSRa24yUZ7oq8-k5WfiFnQhNYUToznd9_sWQ/formResponse';
+        const PHONE_ID = 'entry.1550944098';
         const formData = new FormData();
 
         formData.append(PHONE_ID, phone);
@@ -204,6 +205,7 @@ export const LastModal = ({onNext}) => {
         const myRequest = new Request(GOOGLE_FORM_ACTION_URL, myInit);
 
         fetch(myRequest).then(() => {
+            reachMetrikaGoal('phone');
             setIsSend(true);
         }).finally(() => {
             setIsSending(false);

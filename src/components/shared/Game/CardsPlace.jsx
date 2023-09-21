@@ -51,5 +51,5 @@ export const CardsPlace = ({ className, onCardDrop, isNotDrop, children, placeRe
         >
             {children}
         </Wrapper>
-    )
-}
+    );
+};

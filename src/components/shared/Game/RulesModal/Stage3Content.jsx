@@ -20,4 +20,3 @@ export const Stage3Content = () => (
         <Image src={levels} alt={''}/>
     </Wrapper>
 );
-

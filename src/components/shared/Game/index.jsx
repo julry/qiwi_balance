@@ -7,6 +7,7 @@ import refresh from '../../../assets/images/refresh.svg';
 import ask from '../../../assets/images/askSign.svg';
 import levelBg from '../../../assets/images/levelBg.svg';
 import errorIcon from '../../../assets/images/errorFace.svg';
+import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
 import { FlexWrapper } from '../FlexWrapper';
 import { Modal } from '../Modal';
 import { Card } from './Card';
@@ -225,6 +226,7 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
 
     const handleNextRule = () => {
         if (rulesStage === 2) {
+            if (isFirstTime) reachMetrikaGoal('rules')
             setRulesStage(0);
             setIsRules(false);
         } else {
@@ -316,5 +318,5 @@ export const Game = ({ cards, isFirstTime, level, onNext }) => {
                 )}
             </Content>
         </Wrapper>
-    )
-}
+    );
+};

@@ -30,4 +30,4 @@ export const screens = [
         id: 5,
         component: Screen6
     }
-]
+];

@@ -95,5 +95,5 @@ export const Card = ({ className, card, onDragStart, color, isShowPoints, onClic
                 <PointWrapper>{shownPoints}</PointWrapper>
             )}
         </Wrapper>
-    )
-}
+    );
+};

@@ -83,14 +83,12 @@ const EqualSign = styled(BoldText)`
   line-height: 28px;
 `;
 
-export const Stage2Content = () => {
+export const Stage2Content = () =>  (
+    <Wrapper>
+        <FieldStyled cards={rulesCardUpper} color={'#45B3E9'} points={6} isNotDrop $isTop/>
+        <EqualSign>=</EqualSign>
+        <FieldStyled cards={rulesCardBottom} color={'#E94969'} points={6} isNotDrop isBottom />
+    </Wrapper>
+);
 
-    return (
-        <Wrapper>
-            <FieldStyled cards={rulesCardUpper} color={'#45B3E9'} points={6} isNotDrop $isTop/>
-            <EqualSign>=</EqualSign>
-            <FieldStyled cards={rulesCardBottom} color={'#E94969'} points={6} isNotDrop isBottom />
-        </Wrapper>
-    )
-}
 

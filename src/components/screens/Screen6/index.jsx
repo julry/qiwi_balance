@@ -1,11 +1,22 @@
 import { useState } from 'react';
+import { openTg } from '../../../utils/openTg';
+import { reachMetrikaGoal } from '../../../utils/reachMetrikaGoal';
 import { LastModal } from '../../shared/LastModal';
 import { Game } from '../../shared/Game';
 import { icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8 } from './icons';
-import { openTg } from '../../../utils/openTg';
 
 export const Screen6 = () => {
     const [isLastModal, setIsLastModal] = useState(false);
+
+    const handleFinish = () => {
+        reachMetrikaGoal('level5');
+        setIsLastModal(true);
+    };
+
+    const handleOpenTg = () => {
+        reachMetrikaGoal('click3');
+        openTg();
+    };
 
     const cards = [
         {
@@ -68,9 +79,8 @@ export const Screen6 = () => {
 
     return (
         <>
-            <Game cards={cards} level={5} onNext={() => setIsLastModal(true)}/>
-            {isLastModal && <LastModal onNext={openTg}/>}
+            <Game cards={cards} level={5} onNext={handleFinish}/>
+            {isLastModal && <LastModal onNext={handleOpenTg}/>}
         </>
-    )
-
-}
+    );
+};

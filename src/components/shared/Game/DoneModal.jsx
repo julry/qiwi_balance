@@ -59,4 +59,4 @@ export const DoneModal = ({onNext}) => (
         </Info>
         <ButtonStyled onClick={onNext}>Идти дальше</ButtonStyled>
     </Wrapper>
-)
+);
